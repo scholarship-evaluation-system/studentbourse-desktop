@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StudentBourse Dashboard</title>
+  <link rel="stylesheet" href="studentbourse.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="sb-header">
+    <div class="sb-logo"><span>Student</span><span class="sb-accent">Bourse</span></div>
+    <nav class="sb-header-icons">
+      <span class="sb-icon"><img src="icons/mail.svg" alt="Mail" class="sb-icon-img"></span>
+      <span class="sb-icon"><img src="icons/home.svg" alt="Home" class="sb-icon-img"></span>
+      <span class="sb-icon"><img src="icons/settings" alt="Settings" class="sb-icon-img"></span>
+    </nav>
+  </header>
+  <main class="sb-main">
+    <aside class="sb-sidebar">
+      <div class="sb-dropdowns">
+        <select id="universitySelect">
+          <option>ABC University</option>
+        </select>
+        <select id="semesterSelect">
+          <option>2025 Fall</option>
+        </select>
+      </div>
+      <ul class="sb-menu">
+        <li><img src="icons/scholarships" alt="Scholarships" class="sb-menu-icon">Scholarships</li>
+        <li><img src="icons/students" alt="Students" class="sb-menu-icon">Students</li>
+        <li><img src="icons/applications" alt="Applications" class="sb-menu-icon">Applications</li>
+        <li><img src="icons/reviews" alt="Reviews" class="sb-menu-icon">Reviews</li>
+        <li><img src="icons/awards" alt="Awards" class="sb-menu-icon">Awards</li>
+      </ul>
+    </aside>
+    <section class="sb-dashboard">
+      <div class="sb-search">
+        <input type="text" placeholder="Type here ...">
+        <button class="sb-search-btn">🔍</button>
+      </div>
+      <div class="sb-cards">
+        <div class="sb-card">
+          <div class="sb-card-icon">€</div>
+          <div class="sb-card-title">Total Utilization</div>
+          <div class="sb-card-value" id="totalUtilization">2,000 of 8,000 €</div>
+          <div class="sb-card-progress">
+            <div class="sb-card-progress-bar" style="width: 25%;"></div>
+          </div>
+          <div class="sb-card-percentage">25%</div>
+        </div>
+        <div class="sb-card">
+          <div class="sb-card-icon"><img src="icons/students" alt="Students"></div>
+          <div class="sb-card-title">Awarded Students</div>
+          <div class="sb-card-value" id="awardedStudents">450 of 900</div>
+          <div class="sb-card-progress">
+            <div class="sb-card-progress-bar" style="width: 50%;"></div>
+          </div>
+          <div class="sb-card-percentage">50%</div>
+        </div>
+        <div class="sb-card">
+          <div class="sb-card-icon"><img src="icons/applications" alt="Applications"></div>
+          <div class="sb-card-title">Applications Evaluated</div>
+          <div class="sb-card-value" id="applicationsEvaluated">300 of 900</div>
+          <div class="sb-card-progress">
+            <div class="sb-card-progress-bar" style="width: 30%;"></div>
+          </div>
+          <div class="sb-card-percentage">30%</div>
+        </div>
+        <div class="sb-card">
+          <div class="sb-card-icon"><img src="icons/reviews" alt="Reviews"></div>
+          <div class="sb-card-title">Reviews Completed</div>
+          <div class="sb-card-value" id="reviewsCompleted">180 of 300</div>
+          <div class="sb-card-progress">
+            <div class="sb-card-progress-bar" style="width: 60%;"></div>
+          </div>
+          <div class="sb-card-percentage">60%</div>
+        </div>
+      </div>
+      <div class="sb-table">
+        <div class="sb-tabs">
+          <button class="active">Students Awarded</button>
+          <button>Funds Awarded</button>
+        </div>
+        <div class="sb-table-content">
+          <div class="sb-table-chart">
+            <canvas id="studentsAwardedChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="sb-actions">
+        <div class="sb-action-card">
+          <img src="icons/bell.png" alt="Bell" class="sb-action-icon">
+          <span>Incomplete Applications</span>
+          <button class="sb-reminder">Send Reminder</button>
+        </div>
+        <div class="sb-action-card">
+          <img src="icons/applications" alt="Applications" class="sb-action-icon">
+          <span>Evaluate Applications</span>
+          <button class="sb-arrow">→</button>
+        </div>
+        <div class="sb-action-card">
+          <img src="icons/Statistics.png" alt="Statistics" class="sb-action-icon">
+          <span>Retrieve Statistics</span>
+          <button class="sb-arrow">→</button>
+        </div>
+        <div class="sb-action-card">
+          <img src="icons/reviews" alt="Reviews" class="sb-action-icon">
+          <span>Review Evaluated Applications</span>
+          <button class="sb-arrow">→</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="sb-footer">
+    <span>• Terms of use</span>
+    <span>• Contact Us</span>
+  </footer>
+  <script>
+    // Example chart for Students Awarded section
+    const ctx = document.getElementById('studentsAwardedChart');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+          datasets: [{
+            label: 'Students Awarded',
+            data: [12, 19, 15, 25, 22, 30],
+            backgroundColor: 'rgba(255, 184, 0, 0.6)',
+            borderColor: 'rgba(255, 184, 0, 1)',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top'
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+
+    // Example: Populate dropdowns with data
+    const universities = ['ABC University', 'XYZ College', 'State University'];
+    const semesters = ['2025 Fall', '2025 Spring', '2024 Fall'];
+
+    function populateDropdown(selectId, options) {
+      const select = document.getElementById(selectId);
+      select.innerHTML = '';
+      options.forEach(option => {
+        const opt = document.createElement('option');
+        opt.value = option;
+        opt.textContent = option;
+        select.appendChild(opt);
+      });
+    }
+
+    // Populate dropdowns on load
+    populateDropdown('universitySelect', universities);
+    populateDropdown('semesterSelect', semesters);
+  </script>
+</body>
+</html>
