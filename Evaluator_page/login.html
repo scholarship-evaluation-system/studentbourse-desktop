@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudentBourse - Login</title>
-  <link rel="stylesheet" href="login.css">
+  <title>StudentBourse - Log In</title>
+  <link rel="stylesheet" href="login-style.css">
 </head>
 <body>
   <header class="sb-header">
@@ -25,48 +25,25 @@
     
     <div class="sb-login-form-container">
       <div class="sb-login-tabs">
-        <button class="sb-tab-btn sb-tab-active">Create an account</button>
-        <button class="sb-tab-btn">Log in</button>
+        <button class="sb-tab-btn">Create an account</button>
+        <button class="sb-tab-btn sb-tab-active">Log in</button>
       </div>
 
-      <p class="sb-login-subtitle">Begin your application process by creating an account</p>
+      <p class="sb-login-subtitle">Please sign in to continue smoothly with your application steps.</p>
 
       <form class="sb-login-form">
-        <div class="sb-form-row">
-          <div class="sb-form-group">
-            <label for="firstName">First Name<span class="sb-required">*</span></label>
-            <input type="text" id="firstName" class="sb-input" placeholder="Input Field" required>
-          </div>
-          <div class="sb-form-group">
-            <label for="lastName">Last Name<span class="sb-required">*</span></label>
-            <input type="text" id="lastName" class="sb-input" placeholder="Input Field" required>
-          </div>
+        <div class="sb-form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="sb-input" placeholder="Email Address" required>
         </div>
 
-        <div class="sb-form-row">
-          <div class="sb-form-group">
-            <label for="email">Email<span class="sb-required">*</span></label>
-            <input type="email" id="email" class="sb-input" placeholder="Input Field" required>
-          </div>
-          <div class="sb-form-group">
-            <label for="phone">Phone<span class="sb-required">*</span></label>
-            <input type="tel" id="phone" class="sb-input" placeholder="Input Field" required>
-          </div>
-        </div>
-
-        <div class="sb-form-row">
-          <div class="sb-form-group">
-            <label for="password">Password<span class="sb-required">*</span></label>
-            <input type="password" id="password" class="sb-input" placeholder="Input Field" required>
-          </div>
-          <div class="sb-form-group">
-            <label for="confirmPassword">Confirm Password<span class="sb-required">*</span></label>
-            <input type="password" id="confirmPassword" class="sb-input" placeholder="Input Field" required>
-          </div>
+        <div class="sb-form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="sb-input" placeholder="atleast 8 characters" required>
         </div>
 
         <div class="sb-form-submit">
-          <button type="submit" class="sb-register-btn">Register</button>
+          <button type="submit" class="sb-login-btn">Log In</button>
         </div>
       </form>
     </div>
