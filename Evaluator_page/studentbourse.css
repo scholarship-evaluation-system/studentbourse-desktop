@@ -119,6 +119,7 @@ body {
   margin-bottom: 0;
   grid-column: 1 / span 2;
   grid-row: 1 / 2;
+  margin-left: 50%;
 }
 .sb-search input {
   flex: 1;
