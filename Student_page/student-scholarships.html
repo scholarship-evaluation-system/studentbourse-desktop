@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentBourse - My Scholarships</title>
+  <link rel="stylesheet" href="student-scholarships.css">
+</head>
+<body>
+  <header class="sb-header">
+    <div class="sb-logo"><span>Student</span><span class="sb-accent">Bourse</span></div>
+    <nav class="sb-header-icons">
+      <span class="sb-icon"><img src="../Evaluator_page/icons/mail.svg" alt="Mail" class="sb-icon-img"></span>
+      <span class="sb-icon"><img src="../Evaluator_page/icons/home.svg" alt="Home" class="sb-icon-img"></span>
+      <span class="sb-user-profile">
+        <img src="../Evaluator_page/icons/settings" alt="User" class="sb-user-icon">
+        <span class="sb-user-name">Roy Batty</span>
+      </span>
+    </nav>
+  </header>
+  
+  <main class="sb-main">
+    <aside class="sb-sidebar">
+      <button class="sb-my-scholarships-btn">My Scholarships</button>
+      
+      <div class="sb-dropdowns">
+        <select id="semesterSelect" class="sb-semester-dropdown">
+          <option>2025 Fall</option>
+          <option>2025 Spring</option>
+          <option>2024 Fall</option>
+        </select>
+      </div>
+      
+      <ul class="sb-menu">
+        <li class="sb-menu-item active">
+          <img src="../Evaluator_page/icons/scholarships" alt="Matches" class="sb-menu-icon">
+          <span>Matches</span>
+        </li>
+        <li class="sb-menu-item">
+          <img src="../Evaluator_page/icons/awards" alt="Recommended" class="sb-menu-icon">
+          <span>Recommended</span>
+        </li>
+        <li class="sb-menu-item">
+          <img src="../Evaluator_page/icons/reviews" alt="Picked" class="sb-menu-icon">
+          <span>Picked</span>
+        </li>
+        <li class="sb-menu-item">
+          <img src="../Evaluator_page/icons/applications" alt="In Process" class="sb-menu-icon">
+          <span>In Process</span>
+        </li>
+        <li class="sb-menu-item">
+          <img src="../Evaluator_page/icons/students" alt="Submitted" class="sb-menu-icon">
+          <span>Submitted</span>
+        </li>
+      </ul>
+    </aside>
+    
+    <section class="sb-dashboard">
+      <div class="sb-search">
+        <input type="text" placeholder="Type here ...">
+        <button class="sb-search-btn">🔍</button>
+      </div>
+      
+      <div class="sb-cards">
+        <div class="sb-card">
+          <div class="sb-card-icon-box"></div>
+          <div class="sb-card-title">Matches</div>
+          <div class="sb-card-value">75</div>
+          <div class="sb-card-progress">
+            <div class="sb-card-progress-bar" style="width: 25%;"></div>
+          </div>
+          <div class="sb-card-percentage">25%</div>
+        </div>
+        
+        <div class="sb-card">
+          <div class="sb-card-icon-box"></div>
+          <div class="sb-card-title">Wishlisted</div>
+          <div class="sb-card-value">450 of 900</div>
+          <div class="sb-card-progress">
+            <div class="sb-card-progress-bar" style="width: 50%;"></div>
+          </div>
+          <div class="sb-card-percentage">50%</div>
+        </div>
+        
+        <div class="sb-card">
+          <div class="sb-card-icon-box"></div>
+          <div class="sb-card-title">In process</div>
+          <div class="sb-card-value">300 of 900</div>
+          <div class="sb-card-progress">
+            <div class="sb-card-progress-bar" style="width: 30%;"></div>
+          </div>
+          <div class="sb-card-percentage">30%</div>
+        </div>
+        
+        <div class="sb-card">
+          <div class="sb-card-icon-box"></div>
+          <div class="sb-card-title">Submitted</div>
+          <div class="sb-card-value">180 of 300</div>
+          <div class="sb-card-progress">
+            <div class="sb-card-progress-bar" style="width: 60%;"></div>
+          </div>
+          <div class="sb-card-percentage">60%</div>
+        </div>
+      </div>
+      
+      <div class="sb-action-section">
+        <div class="sb-action-card">
+          <input type="checkbox" class="sb-checkbox">
+          <span class="sb-action-text">Incomplete Applications</span>
+        </div>
+        
+        <div class="sb-action-card">
+          <input type="checkbox" class="sb-checkbox">
+          <span class="sb-action-text">-</span>
+          <button class="sb-arrow-btn">→</button>
+        </div>
+        
+        <div class="sb-action-card">
+          <img src="../Evaluator_page/icons/Statistics.png" alt="Statistics" class="sb-action-icon">
+          <span class="sb-action-text">Retrieve Statistics</span>
+          <button class="sb-arrow-btn">→</button>
+        </div>
+        
+        <div class="sb-action-card">
+          <input type="checkbox" class="sb-checkbox">
+          <span class="sb-action-text">Review Submitted Applications</span>
+          <button class="sb-arrow-btn">→</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="sb-footer">
+    <a href="#" class="sb-footer-link">+ Terms of use</a>
+    <a href="#" class="sb-footer-link">+ Contact Us</a>
+  </footer>
+</body>
+</html>
