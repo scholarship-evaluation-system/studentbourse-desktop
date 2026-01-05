@@ -14,13 +14,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 32px;
+  padding: 16px 24px;
   background: #ffffff;
   border-bottom: 2px solid #222;
 }
 
 .sb-logo {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -28,15 +28,21 @@ body {
   color: #7fb069;
 }
 
-.sb-header-icons .sb-icon {
+.sb-header-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sb-icon {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
 }
 
 .sb-icon-img {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
 }
 
 /* Main Login Layout */
@@ -49,7 +55,7 @@ body {
   flex: 1;
   max-width: 40%;
   overflow: hidden;
-  border-right: 3px solid #222;
+  border-right: 2px solid #222;
 }
 
 .sb-login-image img {
@@ -65,9 +71,9 @@ body {
   flex-direction: column;
   justify-content: center;
   background: #d8e5d0;
-  border-left: 3px solid #222;
-  border-right: 3px solid #222;
-  border-bottom: 3px solid #222;
+  border-left: 2px solid #222;
+  border-right: 2px solid #222;
+  border-bottom: 2px solid #222;
 }
 
 /* Tabs */
@@ -181,6 +187,28 @@ body {
 .sb-register-btn:active {
   transform: translateY(0);
   box-shadow: none;
+}
+
+/* Footer */
+.sb-footer {
+  background: #d8e5d0;
+  border-top: 2px solid #222;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.sb-footer-link {
+  color: #222;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.sb-footer-link:hover {
+  color: #7fb069;
+  text-decoration: underline;
 }
 
 /* Footer */
