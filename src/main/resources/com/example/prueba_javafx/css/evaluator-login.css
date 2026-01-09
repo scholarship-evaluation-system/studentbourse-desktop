@@ -1,0 +1,84 @@
+/* Root and header */
+.root {
+    -fx-font-family: 'Courier New', Courier, monospace;
+    -fx-background-color: #fcf6d9;
+}
+
+.sb-header {
+    -fx-padding: 16 24;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #222;
+    -fx-border-width: 0 0 2 0;
+    -fx-alignment: center-left;
+}
+
+.sb-logo-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.sb-logo-accent {
+    -fx-text-fill: #ffb800;
+}
+
+/* Layout similar to student login but with evaluator accent */
+.sb-login-main {
+    -fx-alignment: center-left;
+    -fx-min-height: calc(100vh - 80px);
+}
+
+.sb-login-image > ImageView {
+    -fx-fit-width: 600;
+    -fx-preserve-ratio: true;
+}
+
+.sb-login-form-container {
+    -fx-padding: 60 80;
+    -fx-background-color: #fcf6d9;
+    -fx-border-color: #222;
+    -fx-border-width: 0 2 2 2;
+    -fx-alignment: center-left;
+}
+
+.sb-tab-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #222;
+    -fx-border-width: 2;
+    -fx-padding: 12 24;
+    -fx-font-family: 'Courier New', monospace;
+}
+
+.sb-tab-active {
+    -fx-background-color: #ffb800;
+    -fx-text-fill: #ffffff;
+}
+
+.sb-input {
+    -fx-padding: 14 16;
+    -fx-border-color: #222;
+    -fx-border-width: 2;
+    -fx-background-color: #fff;
+    -fx-prompt-text-fill: #999;
+}
+
+.sb-login-btn {
+    -fx-background-color: #ffb800;
+    -fx-border-color: #222;
+    -fx-border-width: 2;
+    -fx-padding: 12 40;
+    -fx-font-family: 'Courier New', monospace;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.sb-login-btn:hover {
+    -fx-background-color: #e6a700;
+}
+
+.sb-footer {
+    -fx-background-color: #fcf6d9;
+    -fx-border-color: #222;
+    -fx-border-width: 2 0 0 0;
+    -fx-padding: 16 24;
+}

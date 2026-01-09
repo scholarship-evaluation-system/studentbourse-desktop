@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.prueba_javafx.StudentDashboardController" stylesheets="@../css/student-dashboard.css">
+    
+    <top>
+        <HBox styleClass="sb-header">
+            <HBox styleClass="sb-logo">
+                <Label text="Student" styleClass="sb-logo-text"/>
+                <Label text="Bourse" styleClass="sb-logo-accent"/>
+            </HBox>
+            <HBox styleClass="sb-header-icons">
+                <ImageView styleClass="sb-icon-img" fitWidth="24" fitHeight="24" preserveRatio="true">
+                    <image><Image url="@../icons/bell.png"/></image>
+                </ImageView>
+            </HBox>
+        </HBox>
+    </top>
+    
+    <center>
+        <HBox styleClass="sb-main">
+            <VBox styleClass="sb-sidebar">
+                <Button text="My Scholarships" styleClass="sb-my-scholarships-btn"/>
+                <ComboBox promptText="2025 Fall" styleClass="sb-semester-dropdown"/>
+                
+                <VBox styleClass="sb-menu">
+                    <HBox styleClass="sb-menu-item, active">
+                        <ImageView fitWidth="20" fitHeight="20"><image><Image url="@../icons/scholarships.png"/></image></ImageView>
+                        <Label text="Matches"/>
+                    </HBox>
+                    <HBox styleClass="sb-menu-item">
+                        <ImageView fitWidth="20" fitHeight="20"><image><Image url="@../icons/awards.png"/></image></ImageView>
+                        <Label text="Recommended"/>
+                    </HBox>
+                    <HBox styleClass="sb-menu-item">
+                        <ImageView fitWidth="20" fitHeight="20"><image><Image url="@../icons/reviews.png"/></image></ImageView>
+                        <Label text="Picked"/>
+                    </HBox>
+                    <HBox styleClass="sb-menu-item">
+                        <ImageView fitWidth="20" fitHeight="20"><image><Image url="@../icons/applications.png"/></image></ImageView>
+                        <Label text="In Process"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+            
+            <VBox styleClass="sb-dashboard">
+                <HBox styleClass="sb-search">
+                    <TextField promptText="Type here ..." styleClass="sb-search-input"/>
+                    <Button text="🔍" styleClass="sb-search-btn"/>
+                </HBox>
+                
+                <GridPane styleClass="sb-cards" hgap="16" vgap="16">
+                    <VBox styleClass="sb-card" GridPane.columnIndex="0">
+                        <HBox styleClass="sb-card-icon-box"/>
+                        <Label text="Total Scholarships" styleClass="sb-card-title"/>
+                        <Label text="45 of 100" styleClass="sb-card-value"/>
+                        <ProgressBar progress="0.45" styleClass="sb-card-progress"/>
+                        <Label text="45%" styleClass="sb-card-percentage"/>
+                    </VBox>
+                </GridPane>
+            </VBox>
+        </HBox>
+    </center>
+    
+    <bottom>
+        <HBox styleClass="sb-footer">
+            <Hyperlink text="+ Terms of use" styleClass="sb-footer-link"/>
+            <Hyperlink text="+ Contact Us" styleClass="sb-footer-link"/>
+        </HBox>
+    </bottom>
+</BorderPane>

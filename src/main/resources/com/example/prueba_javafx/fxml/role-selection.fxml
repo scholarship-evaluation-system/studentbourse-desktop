@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.prueba_javafx.RoleSelectionController" stylesheets="@../css/role-selection.css">
+    
+    <!-- Header -->
+    <top>
+        <HBox styleClass="sb-header">
+            <HBox styleClass="sb-logo">
+                <Label text="Student" styleClass="sb-logo-text"/>
+                <Label text="Bourse" styleClass="sb-logo-accent"/>
+            </HBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox fx:id="headerIcons" styleClass="sb-header-icons">
+                <!-- Icon added programmatically in controller -->
+            </HBox>
+        </HBox>
+    </top>
+    
+    <!-- Main Content -->
+    <center>
+        <HBox styleClass="sb-role-main">
+            <StackPane styleClass="sb-role-image">
+                <ImageView fitHeight="640" preserveRatio="true">
+                    <image><Image url="@../images/Choose.jpg"/></image>
+                </ImageView>
+            </StackPane>
+            
+            <VBox styleClass="sb-role-container">
+                <Label text="Role Selection" styleClass="sb-role-title"/>
+                <Label text="Before we begin, please select your role. The account creation and registration process would follow accordingly." 
+                       styleClass="sb-role-description" wrapText="true"/>
+                <HBox styleClass="sb-role-buttons">
+                    <Button text="Student" styleClass="sb-role-btn, sb-student-btn" onAction="#onStudentClick"/>
+                    <Button text="Evaluator" styleClass="sb-role-btn, sb-evaluator-btn" onAction="#onEvaluatorClick"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+    
+    <!-- Footer -->
+    <bottom>
+        <HBox styleClass="sb-footer">
+            <Hyperlink text="+ Terms of use" styleClass="sb-footer-link"/>
+            <Hyperlink text="+ Contact Us" styleClass="sb-footer-link"/>
+        </HBox>
+    </bottom>
+</BorderPane>

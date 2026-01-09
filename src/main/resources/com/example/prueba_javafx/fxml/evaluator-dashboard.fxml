@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.prueba_javafx.EvaluatorDashboardController" stylesheets="@../css/evaluator-dashboard.css">
+    
+    <top>
+        <HBox styleClass="sb-header">
+            <HBox styleClass="sb-logo">
+                <Label text="Student" styleClass="sb-logo-text"/>
+                <Label text="Bourse" styleClass="sb-logo-accent"/>
+            </HBox>
+            <HBox styleClass="sb-header-icons">
+                <ImageView styleClass="sb-icon-img" fitWidth="24" fitHeight="24" preserveRatio="true">
+                    <image><Image url="@../icons/bell.png"/></image>
+                </ImageView>
+            </HBox>
+        </HBox>
+    </top>
+    
+    <center>
+        <HBox styleClass="sb-main">
+            <VBox styleClass="sb-sidebar">
+                <ComboBox promptText="ABC University" styleClass="sb-dropdown"/>
+                <ComboBox promptText="2025 Fall" styleClass="sb-dropdown"/>
+                
+                <VBox styleClass="sb-menu">
+                    <HBox styleClass="sb-menu-item">
+                        <ImageView fitWidth="20" fitHeight="20"><image><Image url="@../icons/applications.png"/></image></ImageView>
+                        <Label text="Applications"/>
+                    </HBox>
+                    <HBox styleClass="sb-menu-item">
+                        <ImageView fitWidth="20" fitHeight="20"><image><Image url="@../icons/reviews.png"/></image></ImageView>
+                        <Label text="Reviews"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+            
+            <VBox styleClass="sb-dashboard">
+                <HBox styleClass="sb-search">
+                    <TextField promptText="Type here ..." styleClass="sb-search-input"/>
+                    <Button text="🔍" styleClass="sb-search-btn"/>
+                </HBox>
+                
+                <GridPane styleClass="sb-cards" hgap="16" vgap="16">
+                    <VBox styleClass="sb-card" GridPane.columnIndex="0">
+                        <Label text="€" styleClass="sb-card-icon"/>
+                        <Label text="Total Utilization" styleClass="sb-card-title"/>
+                        <Label text="2,000 of 8,000 €" styleClass="sb-card-value"/>
+                        <ProgressBar progress="0.25" styleClass="sb-card-progress"/>
+                        <Label text="25%" styleClass="sb-card-percentage"/>
+                    </VBox>
+                </GridPane>
+            </VBox>
+        </HBox>
+    </center>
+    
+    <bottom>
+        <HBox styleClass="sb-footer">
+            <Hyperlink text="+ Terms of use" styleClass="sb-footer-link"/>
+            <Hyperlink text="+ Contact Us" styleClass="sb-footer-link"/>
+        </HBox>
+    </bottom>
+</BorderPane>

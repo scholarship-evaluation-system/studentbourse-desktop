@@ -1,0 +1,110 @@
+/* Root and header */
+.root {
+    -fx-font-family: 'Courier New', Courier, monospace;
+    -fx-background-color: #d8e5d0;
+    -fx-text-fill: #222;
+}
+
+.sb-header {
+    -fx-padding: 16 24;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #222;
+    -fx-border-width: 0 0 2 0;
+}
+
+.sb-logo-accent {
+    -fx-text-fill: #7fb069;
+}
+
+/* Main layout */
+.sb-main {
+    -fx-display: flex;
+}
+
+.sb-sidebar {
+    -fx-min-width: 220px;
+    -fx-background-color: #d8e5d0;
+    -fx-padding: 16;
+    -fx-border-color: #222;
+    -fx-border-width: 0 2 0 0;
+    -fx-spacing: 16;
+}
+
+.sb-my-scholarships-btn {
+    -fx-background-color: #7fb069;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 12 16;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-color: #222;
+    -fx-border-width: 2;
+}
+
+.sb-dropdowns {
+    -fx-spacing: 8;
+}
+
+.sb-semester-dropdown {
+    -fx-pref-width: 100%;
+    -fx-padding: 10 12;
+    -fx-border-color: #222;
+    -fx-border-width: 2;
+    -fx-background-color: #ffffff;
+}
+
+.sb-menu {
+    -fx-padding: 0;
+    -fx-spacing: 4;
+}
+
+.sb-menu-item {
+    -fx-padding: 10 12;
+    -fx-alignment: center-left;
+}
+
+.sb-menu-item:hover {
+    -fx-background-color: #c5d6ba;
+}
+
+.sb-menu-item.active {
+    -fx-background-color: #b8ccac;
+    -fx-font-weight: 600;
+}
+
+.sb-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #222;
+    -fx-border-width: 2;
+    -fx-padding: 16;
+    -fx-border-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 4, 0, 4, 4);
+}
+
+.sb-card-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+}
+
+.sb-card-value {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.sb-card-progress {
+    -fx-pref-height: 12px;
+    -fx-background-color: #e0e0e0;
+    -fx-border-color: #222;
+    -fx-border-width: 1;
+    -fx-background-radius: 6;
+}
+
+.sb-card-progress-bar {
+    -fx-background-color: #f4b942;
+}
+
+.sb-footer {
+    -fx-background-color: #d8e5d0;
+    -fx-border-color: #222;
+    -fx-border-width: 2 0 0 0;
+    -fx-padding: 16 24;
+}
