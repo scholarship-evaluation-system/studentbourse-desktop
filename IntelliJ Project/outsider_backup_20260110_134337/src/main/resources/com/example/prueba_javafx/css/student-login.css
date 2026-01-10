@@ -1,0 +1,150 @@
+/* Root and header */
+.root {
+    -fx-font-family: 'Courier New', Courier, monospace;
+    -fx-background-color: #d8e5d0;
+}
+
+.sb-header {
+    -fx-padding: 16 24;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #222;
+    -fx-border-width: 0 0 2 0;
+    -fx-alignment: center-left;
+}
+
+.sb-logo {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+.sb-logo-accent {
+    -fx-text-fill: #7fb069;
+}
+
+/* Main login layout */
+.sb-login-main {
+    -fx-alignment: center-left;
+    -fx-min-height: calc(100vh - 80px);
+}
+
+.sb-login-image {
+    -fx-border-color: #222;
+    -fx-border-width: 0 2 0 0;
+    -fx-padding: 0;
+    -fx-alignment: center;
+}
+
+.sb-login-image > ImageView {
+    -fx-fit-width: 520;
+    -fx-fit-height: 720;
+    -fx-preserve-ratio: false;
+}
+
+.sb-login-form-container {
+    -fx-padding: 60 80;
+    -fx-background-color: #d8e5d0;
+    -fx-border-color: #222;
+    -fx-border-width: 0 2 2 2;
+    -fx-alignment: center-left;
+}
+
+/* Tabs */
+.sb-login-tabs {
+    -fx-spacing: 20;
+    -fx-padding: 0 0 30 0;
+}
+
+.sb-tab-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #222;
+    -fx-border-width: 2;
+    -fx-padding: 16 50;
+    -fx-font-family: 'Courier New', Courier, monospace;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-min-width: 160;
+    -fx-background-radius: 2;
+}
+
+.sb-tab-btn:hover {
+    -fx-background-color: #222;
+    -fx-text-fill: #d8e5d0;
+}
+
+.sb-tab-active {
+    -fx-background-color: #7fb069;
+    -fx-text-fill: #ffffff;
+}
+
+.sb-login-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #222;
+    -fx-padding: 0 0 40 0;
+}
+
+
+.sb-login-form {
+    -fx-spacing: 50;
+}
+
+.sb-form-group {
+    -fx-spacing: 0;
+    -fx-padding: 0 0 12 0;
+}
+
+.sb-form-group Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #222;
+    -fx-padding: 0 0 8 0;
+    -fx-font-weight: 500;
+}
+
+.sb-input {
+    -fx-padding: 14 16;
+    -fx-border-color: #222;
+    -fx-border-width: 2;
+    -fx-background-color: #d8e5d0;
+    -fx-font-family: 'Courier New', Courier, monospace;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #999;
+}
+
+.sb-input:focused {
+    -fx-border-color: #7fb069;
+    -fx-background-color: #e8f5e0;
+}
+
+.sb-form-submit {
+    -fx-alignment: center;
+    -fx-padding: 20 0 0 0;
+}
+
+.sb-login-btn {
+    -fx-padding: 16 50;
+    -fx-font-family: 'Courier New', Courier, monospace;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-color: #222;
+    -fx-border-width: 2;
+    -fx-background-color: #7fb069;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 2;
+}
+
+.sb-login-btn:hover {
+    -fx-background-color: #6a9556;
+}
+
+.sb-footer {
+    -fx-background-color: #d8e5d0;
+    -fx-border-color: #222;
+    -fx-border-width: 2 0 0 0;
+    -fx-border-style: solid;
+    -fx-padding: 16 24;
+    -fx-alignment: center-right;
+}
+
+.sb-footer-link {
+    -fx-text-fill: #222;
+}

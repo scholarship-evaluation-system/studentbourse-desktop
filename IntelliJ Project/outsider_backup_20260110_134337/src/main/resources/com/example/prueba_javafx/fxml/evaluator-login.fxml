@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.prueba_javafx.EvaluatorLoginController" stylesheets="@../css/evaluator-login.css">
+    
+    <top>
+        <HBox styleClass="sb-header">
+            <HBox styleClass="sb-logo">
+                <Label text="Student" styleClass="sb-logo-text"/>
+                <Label text="Bourse" styleClass="sb-logo-accent"/>
+            </HBox>
+            <HBox styleClass="sb-header-icons">
+                <ImageView styleClass="sb-icon-img" fitWidth="24" fitHeight="24" preserveRatio="true">
+                    <image><Image url="@../icons/bell.png"/></image>
+                </ImageView>
+            </HBox>
+        </HBox>
+    </top>
+    
+    <center>
+        <HBox styleClass="sb-login-main">
+            <ImageView styleClass="sb-login-image" fitWidth="600" preserveRatio="true">
+                <image><Image url="@../images/evaluator-background.jpg"/></image>
+            </ImageView>
+            
+            <VBox styleClass="sb-login-form-container">
+                <HBox styleClass="sb-login-tabs">
+                    <Button text="Create an account" styleClass="sb-tab-btn" onAction="#onCreateAccountClick"/>
+                    <Button text="Log in" styleClass="sb-tab-btn, sb-tab-active"/>
+                </HBox>
+                
+                <Label text="Please sign in to continue smoothly with your evaluations." styleClass="sb-login-subtitle"/>
+                
+                <VBox styleClass="sb-login-form">
+                    <VBox styleClass="sb-form-group">
+                        <Label text="Email"/>
+                        <TextField fx:id="emailField" promptText="Email Address" styleClass="sb-input"/>
+                    </VBox>
+                    
+                    <VBox styleClass="sb-form-group">
+                        <Label text="Password"/>
+                        <PasswordField fx:id="passwordField" promptText="Password" styleClass="sb-input"/>
+                    </VBox>
+                    
+                    <HBox styleClass="sb-form-submit">
+                        <Button text="Log in" styleClass="sb-login-btn" onAction="#onLoginClick"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </HBox>
+    </center>
+    
+    <bottom>
+        <HBox styleClass="sb-footer">
+            <Hyperlink text="+ Terms of use" styleClass="sb-footer-link"/>
+            <Hyperlink text="+ Contact Us" styleClass="sb-footer-link"/>
+        </HBox>
+    </bottom>
+</BorderPane>
