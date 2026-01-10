@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.kordamp.ikonli.javafx.FontIcon;
 
@@ -18,6 +19,15 @@ public class RoleSelectionController {
 
     @FXML
     private HBox headerIcons;
+
+    @FXML
+    private HBox roleMain;
+
+    @FXML
+    private ImageView roleImageView;
+
+    @FXML
+    private VBox roleContainer;
 
     @FXML
     private void initialize() {
@@ -37,6 +47,16 @@ public class RoleSelectionController {
             }
         } catch (Exception ignored) {
             // If ikonli or pack not available, ignore and leave header blank
+        }
+        // Bind image/form proportions so image spans header->footer and content
+        try {
+            if (roleMain != null && roleImageView != null && roleContainer != null) {
+                roleImageView.fitWidthProperty().bind(roleMain.widthProperty().multiply(0.45));
+                roleImageView.fitHeightProperty().bind(roleMain.heightProperty());
+                roleContainer.prefWidthProperty().bind(roleMain.widthProperty().multiply(0.55));
+                roleContainer.prefHeightProperty().bind(roleMain.heightProperty());
+            }
+        } catch (Exception ignored) {
         }
     }
 

@@ -23,14 +23,14 @@
     
     <!-- Main Content -->
     <center>
-        <HBox styleClass="sb-role-main">
-            <StackPane styleClass="sb-role-image">
-                <ImageView fitHeight="640" preserveRatio="true">
+        <HBox fx:id="roleMain" styleClass="sb-role-main">
+            <StackPane fx:id="roleImagePane" styleClass="sb-role-image">
+                <ImageView fx:id="roleImageView" preserveRatio="true" fitHeight="640">
                     <image><Image url="@../images/Choose.jpg"/></image>
                 </ImageView>
             </StackPane>
             
-            <VBox styleClass="sb-role-container">
+            <VBox fx:id="roleContainer" styleClass="sb-role-container">
                 <Label text="Role Selection" styleClass="sb-role-title"/>
                 <Label text="Before we begin, please select your role. The account creation and registration process would follow accordingly." 
                        styleClass="sb-role-description" wrapText="true"/>
