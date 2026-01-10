@@ -20,18 +20,20 @@
     </top>
     
     <center>
-        <HBox styleClass="sb-login-main">
-            <ImageView styleClass="sb-login-image" fitWidth="520" fitHeight="720" preserveRatio="false"> 
-                <image><Image url="@../images/students login.jpg"/></image>
-            </ImageView>
-            
-            <VBox styleClass="sb-login-form-container">
+        <HBox fx:id="loginMain" styleClass="sb-login-main">
+            <StackPane fx:id="imagePane" styleClass="sb-login-image">
+                <ImageView fx:id="loginImageView" preserveRatio="true" fitHeight="640">
+                    <image><Image url="@../images/students login.jpg"/></image>
+                </ImageView>
+            </StackPane>
+
+            <VBox fx:id="formContainer" styleClass="sb-login-form-container">
                 <HBox styleClass="sb-login-tabs">
                     <Button text="Create an account" styleClass="sb-tab-btn" onAction="#onCreateAccountClick"/>
                     <Button text="Log in" styleClass="sb-tab-btn, sb-tab-active"/>
                 </HBox>
                 
-                <Label text="Please sign in to continue smoothly with your application steps." styleClass="sb-login-subtitle"/>
+                <Label fx:id="subtitleLabel" wrapText="true" text="Please sign in to continue smoothly&#10;with your application." styleClass="sb-login-subtitle"/>
                 
                 <VBox styleClass="sb-login-form">
                     <VBox styleClass="sb-form-group">

@@ -51,7 +51,11 @@ public class ViewTestController {
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setTitle(title);
-            stage.setScene(new Scene(root));
+            // Open windows at a consistent laptop-friendly default so they don't
+            // appear in awkward sizes or cover window controls. The user can
+            // still maximize the window afterwards.
+            Scene scene = new Scene(root, 1280, 800);
+            stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
             System.err.println("Error loading view: " + fxmlPath);
