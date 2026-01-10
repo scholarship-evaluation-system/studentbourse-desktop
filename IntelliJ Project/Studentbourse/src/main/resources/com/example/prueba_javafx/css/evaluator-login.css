@@ -1,51 +1,53 @@
-/* Root and header */
+/* Reuse student-login styles but change colors for evaluator */
+@import url("student-login.css");
+
 .root {
-    -fx-font-family: 'Courier New', Courier, monospace;
-    -fx-background-color: #fcf6d9;
+    -fx-background-color: #fcf6d9; /* yellow background like evaluator dashboard */
 }
 
-.sb-header {
-    -fx-padding: 16 24;
-    -fx-background-color: #ffffff;
-    -fx-border-color: #222;
-    -fx-border-width: 0 0 2 0;
-    -fx-alignment: center-left;
-}
-
-.sb-logo-text {
-    -fx-font-size: 24px;
-    -fx-font-weight: bold;
-}
-
+/* Override accent color to yellow */
 .sb-logo-accent {
     -fx-text-fill: #ffb800;
 }
 
-/* Layout similar to student login but with evaluator accent */
-.sb-login-main {
-    -fx-alignment: center-left;
-    -fx-min-height: calc(100vh - 80px);
-}
-
-.sb-login-image > ImageView {
-    -fx-fit-width: 600;
-    -fx-preserve-ratio: true;
-}
-
 .sb-login-form-container {
-    -fx-padding: 60 80;
-    -fx-background-color: #fcf6d9;
-    -fx-border-color: #222;
-    -fx-border-width: 0 2 2 2;
-    -fx-alignment: center-left;
+    -fx-background-color: #fcf6d9; /* yellow form background */
+    -fx-background-insets: 80 0 0 0; /* push yellow background down to reveal header */
 }
 
-.sb-tab-btn {
-    -fx-background-color: transparent;
-    -fx-border-color: #222;
-    -fx-border-width: 2;
-    -fx-padding: 12 24;
-    -fx-font-family: 'Courier New', monospace;
+/* Reduce spacing between tabs and subtitle */
+.sb-login-tabs {
+    -fx-padding: 0 0 12 0; /* minimal spacing between tabs and text */
+}
+
+/* Reduce subtitle padding */
+.sb-login-subtitle {
+    -fx-padding: 12 0 24 0; /* reduced top padding */
+}
+
+/* Override tab active button color to yellow */
+.sb-tab-active {
+    -fx-background-color: #ffb800;
+    -fx-text-fill: #222;
+}
+
+.sb-tab-active:hover {
+    -fx-background-color: #e6a500;
+}
+
+/* Override login button color to yellow */
+.sb-login-btn {
+    -fx-background-color: #ffb800;
+    -fx-text-fill: #222;
+}
+
+.sb-login-btn:hover {
+    -fx-background-color: #e6a500;
+}
+
+/* Make image fill from header to footer */
+.sb-login-image {
+    -fx-border-width: 0 2 0 0; /* only right border */
 }
 
 .sb-tab-active {

@@ -12,27 +12,28 @@
                 <Label text="Student" styleClass="sb-logo-text"/>
                 <Label text="Bourse" styleClass="sb-logo-accent"/>
             </HBox>
-            <HBox styleClass="sb-header-icons">
-                <ImageView styleClass="sb-icon-img" fitWidth="24" fitHeight="24" preserveRatio="true">
-                    <image><Image url="@../icons/bell.png"/></image>
-                </ImageView>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox fx:id="headerIcons" styleClass="sb-header-icons">
+                <!-- home icon will be added programmatically -->
             </HBox>
         </HBox>
     </top>
     
     <center>
-        <HBox styleClass="sb-login-main">
-            <ImageView styleClass="sb-login-image" fitWidth="600" preserveRatio="true">
-                <image><Image url="@../images/evaluator-background.jpg"/></image>
-            </ImageView>
-            
-            <VBox styleClass="sb-login-form-container">
+        <HBox fx:id="loginMain" styleClass="sb-login-main">
+            <StackPane fx:id="imagePane" styleClass="sb-login-image">
+                <ImageView fx:id="loginImageView" preserveRatio="true" fitHeight="640">
+                    <image><Image url="@../images/evaluator-background.jpg"/></image>
+                </ImageView>
+            </StackPane>
+
+            <VBox fx:id="formContainer" styleClass="sb-login-form-container">
                 <HBox styleClass="sb-login-tabs">
                     <Button text="Create an account" styleClass="sb-tab-btn" onAction="#onCreateAccountClick"/>
                     <Button text="Log in" styleClass="sb-tab-btn, sb-tab-active"/>
                 </HBox>
                 
-                <Label text="Please sign in to continue smoothly with your evaluations." styleClass="sb-login-subtitle"/>
+                <Label fx:id="subtitleLabel" wrapText="true" text="Please sign in to continue smoothly&#10;with your evaluation." styleClass="sb-login-subtitle"/>
                 
                 <VBox styleClass="sb-login-form">
                     <VBox styleClass="sb-form-group">
@@ -55,6 +56,7 @@
     
     <bottom>
         <HBox styleClass="sb-footer">
+            <Region HBox.hgrow="ALWAYS"/>
             <Hyperlink text="+ Terms of use" styleClass="sb-footer-link"/>
             <Hyperlink text="+ Contact Us" styleClass="sb-footer-link"/>
         </HBox>
