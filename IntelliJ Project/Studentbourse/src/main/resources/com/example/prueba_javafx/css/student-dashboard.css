@@ -1,110 +1,270 @@
-/* Root and header */
+/* Root and general styling */
 .root {
     -fx-font-family: 'Courier New', Courier, monospace;
-    -fx-background-color: #d8e5d0;
-    -fx-text-fill: #222;
+    -fx-background-color: #d8f0db;
+    -fx-text-fill: #222222;
 }
 
+/* ===== HEADER ===== */
 .sb-header {
     -fx-padding: 16 24;
     -fx-background-color: #ffffff;
-    -fx-border-color: #222;
+    -fx-border-color: #222222;
     -fx-border-width: 0 0 2 0;
+    -fx-alignment: center;
+}
+
+.sb-logo {
+    -fx-spacing: 0;
+}
+
+.sb-logo-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
 }
 
 .sb-logo-accent {
-    -fx-text-fill: #7fb069;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3cb371;
 }
 
-/* Main layout */
-.sb-main {
-    -fx-display: flex;
-}
-
-.sb-sidebar {
-    -fx-min-width: 220px;
-    -fx-background-color: #d8e5d0;
-    -fx-padding: 16;
-    -fx-border-color: #222;
-    -fx-border-width: 0 2 0 0;
+.sb-header-icons {
     -fx-spacing: 16;
 }
 
+.sb-icon-img {
+    -fx-cursor: hand;
+}
+
+.sb-user-profile {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #222222;
+    -fx-border-width: 2;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.sb-user-profile:hover {
+    -fx-background-color: #f5f5f5;
+}
+
+.sb-user-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.sb-main {
+    -fx-background-color: #d8f0db;
+}
+
+/* ===== SIDEBAR ===== */
+.sb-sidebar {
+    -fx-min-width: 200px;
+    -fx-max-width: 200px;
+    -fx-background-color: #d8f0db;
+    -fx-border-color: #222222;
+    -fx-border-width: 0 2 0 0;
+}
+
 .sb-my-scholarships-btn {
-    -fx-background-color: #7fb069;
+    -fx-background-color: #3cb371;
     -fx-text-fill: #ffffff;
     -fx-padding: 12 16;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-border-color: #222;
+    -fx-border-color: #222222;
     -fx-border-width: 2;
+    -fx-cursor: hand;
+    -fx-pref-width: 168px;
 }
 
-.sb-dropdowns {
-    -fx-spacing: 8;
+.sb-my-scholarships-btn:hover {
+    -fx-background-color: #45c97f;
+}
+
+.sb-semester-combo {
+    -fx-background-color: #3cb371;
+    -fx-border-color: #222222;
+    -fx-border-width: 2;
+    -fx-padding: 8 12;
+    -fx-cursor: hand;
 }
 
 .sb-semester-dropdown {
-    -fx-pref-width: 100%;
-    -fx-padding: 10 12;
-    -fx-border-color: #222;
-    -fx-border-width: 2;
-    -fx-background-color: #ffffff;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-pref-width: 120px;
+}
+
+.sb-semester-dropdown .list-cell {
+    -fx-background-color: #3cb371;
+    -fx-text-fill: #ffffff;
 }
 
 .sb-menu {
-    -fx-padding: 0;
     -fx-spacing: 4;
 }
 
 .sb-menu-item {
-    -fx-padding: 10 12;
-    -fx-alignment: center-left;
+    -fx-padding: 12 16;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
 }
 
 .sb-menu-item:hover {
-    -fx-background-color: #c5d6ba;
+    -fx-background-color: #c8e5cc;
 }
 
-.sb-menu-item.active {
-    -fx-background-color: #b8ccac;
-    -fx-font-weight: 600;
+.sb-menu-text {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+/* ===== DASHBOARD CONTENT ===== */
+.sb-dashboard {
+    -fx-background-color: #d8f0db;
+}
+
+/* Search bar */
+.sb-search-container {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #222222;
+    -fx-border-width: 2;
+    -fx-padding: 8 16;
+    -fx-pref-height: 50px;
+}
+
+.sb-search-input {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #999999;
+}
+
+.sb-search-input:focused {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.sb-search-icon {
+    -fx-font-size: 18px;
+    -fx-text-fill: #222222;
+}
+
+/* ===== STATISTICS CARDS ===== */
+.sb-cards-grid {
+    -fx-hgap: 20;
+    -fx-vgap: 20;
 }
 
 .sb-card {
     -fx-background-color: #ffffff;
-    -fx-border-color: #222;
-    -fx-border-width: 2;
-    -fx-padding: 16;
-    -fx-border-radius: 8;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 4, 0, 4, 4);
+    -fx-border-color: #222222;
+    -fx-border-width: 3;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0, 4, 4);
+    -fx-min-width: 200px;
+    -fx-pref-width: 200px;
 }
 
 .sb-card-title {
-    -fx-font-size: 13px;
-    -fx-font-weight: 500;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
 }
 
 .sb-card-value {
-    -fx-font-size: 15px;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
+    -fx-text-fill: #222222;
 }
 
 .sb-card-progress {
-    -fx-pref-height: 12px;
+    -fx-pref-height: 16px;
     -fx-background-color: #e0e0e0;
-    -fx-border-color: #222;
-    -fx-border-width: 1;
-    -fx-background-radius: 6;
+    -fx-border-color: #222222;
+    -fx-border-width: 2;
 }
 
-.sb-card-progress-bar {
-    -fx-background-color: #f4b942;
+.sb-card-progress .bar {
+    -fx-background-color: #ffb800;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
 }
 
+.sb-card-percentage {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+    -fx-alignment: center-right;
+}
+
+/* ===== ACTION CARDS ===== */
+.sb-action-card-large {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #222222;
+    -fx-border-width: 3;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0, 4, 4);
+    -fx-min-height: 80px;
+}
+
+.sb-action-card-simple {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #222222;
+    -fx-border-width: 3;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0, 4, 4);
+    -fx-cursor: hand;
+    -fx-min-height: 80px;
+}
+
+.sb-action-card-simple:hover {
+    -fx-background-color: #f5f5f5;
+}
+
+.sb-action-title-large {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+.sb-action-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+.sb-action-arrow {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+/* ===== FOOTER ===== */
 .sb-footer {
-    -fx-background-color: #d8e5d0;
-    -fx-border-color: #222;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #222222;
     -fx-border-width: 2 0 0 0;
-    -fx-padding: 16 24;
+}
+
+.sb-footer-link {
+    -fx-font-size: 12px;
+    -fx-text-fill: #222222;
+    -fx-border-width: 0;
+    -fx-underline: false;
+}
+
+.sb-footer-link:hover {
+    -fx-text-fill: #3cb371;
+    -fx-underline: true;
 }
