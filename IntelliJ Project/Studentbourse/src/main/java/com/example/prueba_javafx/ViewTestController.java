@@ -25,6 +25,11 @@ public class ViewTestController {
     }
 
     @FXML
+    private void openCreateAccountStudent() {
+        openView("fxml/createaccount-student.fxml", "Create Account - Student");
+    }
+
+    @FXML
     private void openEvaluatorLogin() {
         openView("fxml/evaluator-login.fxml", "Evaluator Login");
     }

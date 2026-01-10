@@ -1,0 +1,31 @@
+/* Reuse student-login styles but tweak spacing and sizes for this view */
+@import url("student-login.css");
+
+.sb-login-form-container {
+    -fx-background-color: #eaf9ef; /* pale green form background */
+    -fx-background-insets: 120 0 0 0; /* push green background down to reveal header border */
+    -fx-padding: 12 140 120 140; /* add top padding to show header border line clearly */
+}
+
+/* Reduce spacing between tabs and subtitle */
+.sb-login-tabs {
+    -fx-padding: 0 0 6 0; /* minimal spacing */
+}
+
+/* Reduce subtitle padding */
+.sb-login-subtitle {
+    -fx-font-size: 20px;
+    -fx-padding: 6 0 18 0; /* further reduced from 12 0 24 0 */
+}
+
+/* Slightly smaller inputs inside the create account form */
+.sb-create-form .sb-input {
+    -fx-padding: 14 16;
+    -fx-font-size: 16px;
+}
+
+/* Make the descriptive subtitle a little larger than default */
+.sb-login-subtitle {
+    -fx-font-size: 20px;
+}
+

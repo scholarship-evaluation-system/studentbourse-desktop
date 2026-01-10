@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane stylesheets="@../css/createaccount-student.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prueba_javafx.CreateAccountStudentController">
+    <top>
+        <HBox styleClass="sb-header">
+            <HBox styleClass="sb-logo">
+                <Label styleClass="sb-logo-text" text="Student" />
+                <Label styleClass="sb-logo-accent" text="Bourse" />
+            </HBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox fx:id="headerIcons" styleClass="sb-header-icons">
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox fx:id="loginMain" styleClass="sb-login-main">
+            <StackPane fx:id="imagePane" styleClass="sb-login-image">
+                <ImageView fx:id="loginImageView" fitHeight="640" preserveRatio="true">
+                    <image><Image url="@../images/students login.jpg" /></image>
+                </ImageView>
+            </StackPane>
+
+            <VBox fx:id="formContainer" prefHeight="816.0" prefWidth="928.0" styleClass="sb-login-form-container">
+                <HBox styleClass="sb-login-tabs">
+                    <Button styleClass="sb-tab-btn, sb-tab-active" text="Create an account" />
+                    <Button styleClass="sb-tab-btn" text="Log in" />
+                </HBox>
+
+                <Label fx:id="subtitleLabel" styleClass="sb-login-subtitle" text="Begin your application process by creating an account." wrapText="true" />
+
+                <GridPane hgap="40" styleClass="sb-create-form" vgap="20">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50" />
+                        <ColumnConstraints percentWidth="50" />
+                    </columnConstraints>
+
+                    <Label text="First Name*" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField promptText="Your First Name" styleClass="sb-input" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+                    <Label text="Last Name*" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <TextField promptText="Your Last Name" styleClass="sb-input" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Email*" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField promptText="Email Address" styleClass="sb-input" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+                    <Label text="Phone*" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <TextField promptText="+XX X XX XX XX" styleClass="sb-input" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label text="Password*" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <PasswordField promptText="at least 8 characters" styleClass="sb-input" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+
+                    <Label text="Confirm Password*" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    <PasswordField promptText="Retype Password" styleClass="sb-input" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                    <Button styleClass="sb-login-btn" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox styleClass="sb-footer">
+            <Region HBox.hgrow="ALWAYS" />
+            <Hyperlink styleClass="sb-footer-link" text="+ Terms of use" />
+            <Hyperlink styleClass="sb-footer-link" text="+ Contact Us" />
+        </HBox>
+    </bottom>
+</BorderPane>
