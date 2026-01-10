@@ -1,9 +1,12 @@
 /* Reuse student-login styles but tweak spacing and sizes for this view */
 @import url("student-login.css");
 
+.root {
+    -fx-background-color: #eaf9ef; /* pale green background */
+}
+
 .sb-login-form-container {
     -fx-background-color: #eaf9ef; /* pale green form background */
-    -fx-background-insets: 120 0 0 0; /* push green background down to reveal header border */
     -fx-padding: 12 140 120 140; /* add top padding to show header border line clearly */
 }
 

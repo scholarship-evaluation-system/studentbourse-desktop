@@ -1,7 +1,7 @@
 /* Root and header */
 .root {
     -fx-font-family: 'Courier New', Courier, monospace;
-    -fx-background-color: #f5f5f5; /* match role-selection background */
+    -fx-background-color: #eaf9ef; /* pale green background */
 }
 
 .sb-header {
@@ -68,13 +68,14 @@
     -fx-padding: 120 140; /* larger padding for desktop 4K */
     -fx-spacing: 32;
     -fx-alignment: top-left;
-    -fx-background-color: transparent;
+    -fx-background-color: #eaf9ef; /* pale green form background */
+    -fx-background-insets: 120 0 0 0; /* push green background down to reveal header */
 }
 
 /* Tabs */
 .sb-login-tabs {
     -fx-spacing: 30;
-    -fx-padding: 0 0 48 0;
+    -fx-padding: 0 0 24 0; /* reduced spacing */
 }
 
 .sb-tab-btn {
@@ -104,7 +105,7 @@
     -fx-font-size: 18px;
     -fx-text-fill: #222;
     -fx-wrap-text: true;
-    -fx-padding: 18 0 36 0;
+    -fx-padding: 12 0 24 0; /* reduced padding */
 }
 
 
