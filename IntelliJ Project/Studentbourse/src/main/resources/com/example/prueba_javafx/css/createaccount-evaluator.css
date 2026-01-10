@@ -1,0 +1,58 @@
+/* Reuse student-login styles but tweak spacing and sizes for this view */
+@import url("student-login.css");
+
+.root {
+    -fx-background-color: #fcf6d9; /* yellow background like evaluator dashboard */
+}
+
+.sb-login-form-container {
+    -fx-background-color: #fcf6d9; /* yellow form background like evaluator dashboard */
+    -fx-padding: 12 140 120 140; /* add top padding to show header border line clearly */
+}
+
+/* Reduce spacing between tabs and subtitle */
+.sb-login-tabs {
+    -fx-padding: 0 0 6 0; /* minimal spacing */
+}
+
+/* Reduce subtitle padding */
+.sb-login-subtitle {
+    -fx-font-size: 20px;
+    -fx-padding: 6 0 18 0; /* further reduced from 12 0 24 0 */
+}
+
+/* Slightly smaller inputs inside the create account form */
+.sb-create-form .sb-input {
+    -fx-padding: 14 16;
+    -fx-font-size: 16px;
+}
+
+/* Make the descriptive subtitle a little larger than default */
+.sb-login-subtitle {
+    -fx-font-size: 20px;
+}
+
+/* Override tab active button color to yellow */
+.sb-tab-active {
+    -fx-background-color: #ffb800;
+    -fx-text-fill: #222;
+}
+
+.sb-tab-active:hover {
+    -fx-background-color: #e6a500;
+}
+
+/* Override login/register button color to yellow */
+.sb-login-btn {
+    -fx-background-color: #ffb800;
+    -fx-text-fill: #222;
+}
+
+.sb-login-btn:hover {
+    -fx-background-color: #e6a500;
+}
+
+/* Make image fill from header to footer */
+.sb-login-image {
+    -fx-border-width: 0 2 0 0; /* only right border */
+}

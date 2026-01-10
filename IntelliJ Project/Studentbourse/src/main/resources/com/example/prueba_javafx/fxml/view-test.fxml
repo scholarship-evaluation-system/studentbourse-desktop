@@ -39,6 +39,10 @@
     <Button text="Evaluator Login" onAction="#openEvaluatorLogin" 
             prefWidth="250" prefHeight="40"
             style="-fx-font-size: 14px; -fx-background-color: #FF9800; -fx-text-fill: white; -fx-cursor: hand;"/>
+
+    <Button text="Create Account (Evaluator)" onAction="#openCreateAccountEvaluator" 
+            prefWidth="250" prefHeight="40"
+            style="-fx-font-size: 14px; -fx-background-color: #FFA726; -fx-text-fill: white; -fx-cursor: hand;"/>
     
     <Button text="Evaluator Dashboard" onAction="#openEvaluatorDashboard" 
             prefWidth="250" prefHeight="40"
