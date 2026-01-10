@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.prueba_javafx.CoverPageController"
+           styleClass="cover-root">
+
+    <!-- Background gradient -->
+    <VBox alignment="CENTER" spacing="40" styleClass="cover-container">
+        <padding>
+            <Insets top="80" right="40" bottom="80" left="40"/>
+        </padding>
+
+        <!-- Logo Section -->
+        <VBox alignment="CENTER" spacing="20" styleClass="logo-section">
+            <!-- Main Logo -->
+            <TextFlow textAlignment="CENTER" styleClass="logo-container">
+                <Text text="Student" styleClass="logo-text-main"/>
+                <Text text="Bourse" styleClass="logo-text-accent"/>
+            </TextFlow>
+
+            <!-- Tagline -->
+            <Label text="Your future starts here" styleClass="tagline"/>
+        </VBox>
+
+        <!-- Spacer -->
+        <Region VBox.vgrow="ALWAYS"/>
+
+        <!-- Call to Action Button -->
+        <VBox alignment="CENTER" spacing="15">
+            <Button text="Next" onAction="#handleNextButton" styleClass="next-button">
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+            </Button>
+            
+            <!-- Optional subtitle -->
+            <Label text="Explore scholarship opportunities" styleClass="subtitle"/>
+        </VBox>
+
+        <!-- Spacer -->
+        <Region VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+</StackPane>
