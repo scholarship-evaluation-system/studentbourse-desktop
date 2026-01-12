@@ -1,6 +1,9 @@
 package com.example.prueba_javafx;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
@@ -10,7 +13,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import org.kordamp.ikonli.javafx.FontIcon;
+
+import java.net.URL;
 
 public class CreateAccountEvaluatorController {
 
@@ -41,10 +47,12 @@ public class CreateAccountEvaluatorController {
                 iv.setFitHeight(28);
                 iv.setPreserveRatio(true);
                 iv.getStyleClass().add("sb-icon-img");
+                iv.setOnMouseClicked(e -> goToCoverPage());
                 headerIcons.getChildren().add(iv);
             } else {
                 FontIcon home = new FontIcon("fas-home");
                 home.getStyleClass().add("sb-header-icon");
+                home.setOnMouseClicked(e -> goToCoverPage());
                 headerIcons.getChildren().add(home);
             }
         } catch (Exception ignored) {
@@ -70,6 +78,41 @@ public class CreateAccountEvaluatorController {
                 }
             }
         } catch (Exception ignored) {
+        }
+    }
+
+    private void goToCoverPage() {
+        try {
+            URL fxmlUrl = getClass().getResource("fxml/cover-page.fxml");
+            if (fxmlUrl == null) {
+                System.err.println("Cannot find fxml/cover-page.fxml");
+                return;
+            }
+            Parent root = FXMLLoader.load(fxmlUrl);
+            Stage stage = (Stage) headerIcons.getScene().getWindow();
+            Scene scene = new Scene(root, stage.getWidth(), stage.getHeight());
+            stage.setScene(scene);
+            stage.setMaximized(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void goToEvaluatorLogin() {
+        try {
+            URL fxmlUrl = getClass().getResource("fxml/evaluator-login.fxml");
+            if (fxmlUrl == null) {
+                System.err.println("Cannot find fxml/evaluator-login.fxml");
+                return;
+            }
+            Parent root = FXMLLoader.load(fxmlUrl);
+            Stage stage = (Stage) headerIcons.getScene().getWindow();
+            Scene scene = new Scene(root, stage.getWidth(), stage.getHeight());
+            stage.setScene(scene);
+            stage.setMaximized(true);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

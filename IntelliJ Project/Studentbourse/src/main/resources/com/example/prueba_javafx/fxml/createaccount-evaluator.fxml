@@ -29,7 +29,7 @@
             <VBox fx:id="formContainer" prefHeight="816.0" prefWidth="928.0" styleClass="sb-login-form-container">
                 <HBox styleClass="sb-login-tabs">
                     <Button styleClass="sb-tab-btn, sb-tab-active" text="Create an account" />
-                    <Button styleClass="sb-tab-btn" text="Log in" />
+                    <Button styleClass="sb-tab-btn" text="Log in" onAction="#goToEvaluatorLogin" />
                 </HBox>
 
                 <Label fx:id="subtitleLabel" styleClass="sb-login-subtitle" text="Begin your evaluation journey by creating an account." wrapText="true" />
