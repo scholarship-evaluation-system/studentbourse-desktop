@@ -81,7 +81,8 @@
     </HBox>
     
     <!-- Footer -->
-    <HBox styleClass="footer-bar" spacing="10" alignment="CENTER">
+    <HBox styleClass="footer-bar" spacing="10" alignment="CENTER_LEFT">
+        <Region HBox.hgrow="ALWAYS"/>
         <Label text="•"/>
         <Hyperlink text="Terms of use" styleClass="footer-link"/>
         <Label text="•"/>

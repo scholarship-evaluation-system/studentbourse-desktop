@@ -116,6 +116,11 @@
     -fx-border-width: 2;
 }
 
+.nav-btn-label {
+    -fx-text-fill: inherit;
+    -fx-font-size: 14px;
+}
+
 .icon {
     -fx-fit-width: 20px;
     -fx-fit-height: 20px;

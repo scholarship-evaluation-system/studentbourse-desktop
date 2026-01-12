@@ -76,7 +76,7 @@ public class EvaluatorApplicationsController {
             content.setAlignment(Pos.CENTER_LEFT);
             
             Label label = new Label(text);
-            label.setStyle("-fx-text-fill: inherit; -fx-font-size: inherit;");
+            label.getStyleClass().add("nav-btn-label");
             
             content.getChildren().addAll(icon, label);
             button.setGraphic(content);
