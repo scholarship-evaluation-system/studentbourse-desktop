@@ -30,7 +30,7 @@
                     <image><Image url="@../icons/mail.png"/></image>
                     <cursor><Cursor fx:constant="HAND"/></cursor>
                 </ImageView>
-                <ImageView styleClass="sb-icon-img" fitWidth="32" fitHeight="32" preserveRatio="true">
+                <ImageView fx:id="homeIcon" styleClass="sb-icon-img" fitWidth="32" fitHeight="32" preserveRatio="true">
                     <image><Image url="@../icons/home.png"/></image>
                     <cursor><Cursor fx:constant="HAND"/></cursor>
                 </ImageView>
