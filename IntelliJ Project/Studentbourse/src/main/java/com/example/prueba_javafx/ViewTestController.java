@@ -66,6 +66,7 @@ public class ViewTestController {
             // still maximize the window afterwards.
             Scene scene = new Scene(root, 1280, 800);
             stage.setScene(scene);
+            stage.setMaximized(true);
             stage.show();
         } catch (Exception e) {
             System.err.println("Error loading view: " + fxmlPath);

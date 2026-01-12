@@ -25,6 +25,7 @@ public class CoverPageController {
             // Create and set the new scene
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.setMaximized(true);
             stage.centerOnScreen();
             
         } catch (IOException e) {

@@ -63,14 +63,16 @@ public class RoleSelectionController {
     @FXML
     private void onStudentClick(ActionEvent event) {
         try {
-            URL fxmlUrl = getClass().getResource("/fxml/student-login.fxml");
+            URL fxmlUrl = getClass().getResource("fxml/student-login.fxml");
             if (fxmlUrl == null) {
-                System.err.println("Cannot find /fxml/student-login.fxml");
+                System.err.println("Cannot find fxml/student-login.fxml");
                 return;
             }
             Parent root = FXMLLoader.load(fxmlUrl);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root, stage.getWidth(), stage.getHeight());
+            stage.setScene(scene);
+            stage.setMaximized(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,14 +81,16 @@ public class RoleSelectionController {
     @FXML
     private void onEvaluatorClick(ActionEvent event) {
         try {
-            URL fxmlUrl = getClass().getResource("/fxml/evaluator-login.fxml");
+            URL fxmlUrl = getClass().getResource("fxml/evaluator-login.fxml");
             if (fxmlUrl == null) {
-                System.err.println("Cannot find /fxml/evaluator-login.fxml");
+                System.err.println("Cannot find fxml/evaluator-login.fxml");
                 return;
             }
             Parent root = FXMLLoader.load(fxmlUrl);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root, stage.getWidth(), stage.getHeight());
+            stage.setScene(scene);
+            stage.setMaximized(true);
         } catch (Exception e) {
             e.printStackTrace();
         }

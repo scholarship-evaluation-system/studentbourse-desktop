@@ -30,6 +30,7 @@ public class Main extends Application {
         }
         primaryStage.setTitle("StudentBourse - View Tester");
         primaryStage.setScene(scene);
+        primaryStage.setMaximized(true); // Open in full window view
         primaryStage.show();
     }
 
