@@ -1,5 +1,6 @@
 package com.example.prueba_javafx;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -71,7 +72,8 @@ public class RoleSelectionController {
             }
             Parent root = FXMLLoader.load(fxmlUrl);
             Stage stage = (Stage) headerIcons.getScene().getWindow();
-            Scene scene = new Scene(root, stage.getWidth(), stage.getHeight());
+            stage.setMaximized(false);
+            Scene scene = new Scene(root, 1280, 800);
             stage.setScene(scene);
             stage.setMaximized(true);
         } catch (Exception e) {
@@ -89,7 +91,8 @@ public class RoleSelectionController {
             }
             Parent root = FXMLLoader.load(fxmlUrl);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root, stage.getWidth(), stage.getHeight());
+            stage.setMaximized(false);
+            Scene scene = new Scene(root, 1280, 800);
             stage.setScene(scene);
             stage.setMaximized(true);
         } catch (Exception e) {
@@ -107,7 +110,8 @@ public class RoleSelectionController {
             }
             Parent root = FXMLLoader.load(fxmlUrl);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root, stage.getWidth(), stage.getHeight());
+            stage.setMaximized(false);
+            Scene scene = new Scene(root, 1280, 800);
             stage.setScene(scene);
             stage.setMaximized(true);
         } catch (Exception e) {
