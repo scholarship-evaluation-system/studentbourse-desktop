@@ -39,10 +39,12 @@ public class RoleSelectionController {
                 iv.setFitHeight(28);
                 iv.setPreserveRatio(true);
                 iv.getStyleClass().add("sb-icon-img");
+                iv.setOnMouseClicked(e -> goToCoverPage());
                 headerIcons.getChildren().add(iv);
             } else {
                 FontIcon home = new FontIcon("fas-home");
                 home.getStyleClass().add("sb-header-icon");
+                home.setOnMouseClicked(e -> goToCoverPage());
                 headerIcons.getChildren().add(home);
             }
         } catch (Exception ignored) {
@@ -57,6 +59,23 @@ public class RoleSelectionController {
                 roleContainer.prefHeightProperty().bind(roleMain.heightProperty());
             }
         } catch (Exception ignored) {
+        }
+    }
+
+    private void goToCoverPage() {
+        try {
+            URL fxmlUrl = getClass().getResource("fxml/cover-page.fxml");
+            if (fxmlUrl == null) {
+                System.err.println("Cannot find fxml/cover-page.fxml");
+                return;
+            }
+            Parent root = FXMLLoader.load(fxmlUrl);
+            Stage stage = (Stage) headerIcons.getScene().getWindow();
+            Scene scene = new Scene(root, stage.getWidth(), stage.getHeight());
+            stage.setScene(scene);
+            stage.setMaximized(true);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

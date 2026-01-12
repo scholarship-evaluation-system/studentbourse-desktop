@@ -11,7 +11,8 @@
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
            fx:controller="com.example.prueba_javafx.CoverPageController"
-           styleClass="cover-root">
+           styleClass="cover-root"
+           stylesheets="@../css/cover-page.css">
 
     <!-- Background gradient -->
     <VBox alignment="CENTER" spacing="40" styleClass="cover-container">
