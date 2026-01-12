@@ -50,16 +50,21 @@
                     <TextField promptText="Email Address" styleClass="sb-input" GridPane.columnIndex="0" GridPane.rowIndex="3" />
 
                     <Label text="Phone*" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <TextField promptText="+XX X XX XX XX" styleClass="sb-input" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <TextField promptText="+XX X XX XX XX XX" styleClass="sb-input" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
                     <Label text="Password*" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                    <PasswordField promptText="at least 8 characters" styleClass="sb-input" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <PasswordField promptText="At least 8 characters" styleClass="sb-input" GridPane.columnIndex="0" GridPane.rowIndex="5" />
 
                     <Label text="Confirm Password*" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                     <PasswordField promptText="Retype Password" styleClass="sb-input" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-                    <Button styleClass="sb-login-btn" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    <Label text="University" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="2" />
+                    <ComboBox promptText="Please select the institute or university you are enrolled in" styleClass="sb-input" GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.columnSpan="2" maxWidth="Infinity" />
+
+                    <Button styleClass="sb-login-btn" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
                   <RowConstraints />
                   <RowConstraints />
                   <RowConstraints />
