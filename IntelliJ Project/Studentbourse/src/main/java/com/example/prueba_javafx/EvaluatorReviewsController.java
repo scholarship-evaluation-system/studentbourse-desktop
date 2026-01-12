@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Optional;
 
-public class EvaluatorApplicationsController {
+public class EvaluatorReviewsController {
 
     @FXML
     private ComboBox<String> universitySelect;
@@ -141,18 +141,18 @@ public class EvaluatorApplicationsController {
 
     @FXML
     private void onApplicationsClick() {
-        // Already on applications page
-        System.out.println("Already on Applications page");
+        try {
+            Stage stage = (Stage) searchField.getScene().getWindow();
+            ViewNavigator.navigateTo(stage, ViewNavigator.EVALUATOR_APPLICATIONS);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void onReviewsClick() {
-        try {
-            Stage stage = (Stage) searchField.getScene().getWindow();
-            ViewNavigator.navigateTo(stage, ViewNavigator.EVALUATOR_REVIEWS);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // Already on reviews page
+        System.out.println("Already on Reviews page");
     }
     
     @FXML

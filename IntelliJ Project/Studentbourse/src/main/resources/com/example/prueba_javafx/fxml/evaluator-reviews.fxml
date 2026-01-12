@@ -7,9 +7,9 @@
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.prueba_javafx.EvaluatorApplicationsController"
+      fx:controller="com.example.prueba_javafx.EvaluatorReviewsController"
       styleClass="sb-root"
-      stylesheets="@../css/evaluator-applications.css">
+      stylesheets="@../css/evaluator-reviews.css">
     
     <!-- Header -->
     <HBox styleClass="header">
@@ -56,15 +56,15 @@
                 <ComboBox fx:id="semesterSelect" styleClass="sidebar-select,semester" promptText="2025 Fall"/>
             </VBox>
             
-            <Button fx:id="applicationsBtn" styleClass="nav-btn,active" onAction="#onApplicationsClick"/>
+            <Button fx:id="applicationsBtn" styleClass="nav-btn" onAction="#onApplicationsClick"/>
             
-            <Button fx:id="reviewsBtn" styleClass="nav-btn" onAction="#onReviewsClick"/>
+            <Button fx:id="reviewsBtn" styleClass="nav-btn,active" onAction="#onReviewsClick"/>
         </VBox>
         
         <!-- Content Section -->
         <VBox styleClass="sb-content" HBox.hgrow="ALWAYS">
             <HBox styleClass="sb-content-header" alignment="CENTER_LEFT">
-                <Label text="Applications" styleClass="content-title"/>
+                <Label text="Reviews" styleClass="content-title"/>
                 <Region HBox.hgrow="ALWAYS"/>
                 <TextField fx:id="searchField" promptText="Type here..." styleClass="search-box"/>
             </HBox>

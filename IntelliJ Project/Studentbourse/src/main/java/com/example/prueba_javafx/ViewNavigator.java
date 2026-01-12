@@ -23,6 +23,7 @@ public class ViewNavigator {
     public static final String EVALUATOR_DASHBOARD = "/com/example/prueba_javafx/fxml/evaluator-dashboard.fxml";
     public static final String SCHOLARSHIP_MATCHES = "/com/example/prueba_javafx/fxml/scholarship-matches.fxml";
     public static final String EVALUATOR_APPLICATIONS = "/com/example/prueba_javafx/fxml/evaluator-applications.fxml";
+    public static final String EVALUATOR_REVIEWS = "/com/example/prueba_javafx/fxml/evaluator-reviews.fxml";
     public static final String PICKED_APPLICATIONS = "/com/example/prueba_javafx/fxml/picked-applications.fxml";
     public static final String IN_PROCESS = "/com/example/prueba_javafx/fxml/in-process.fxml";
     public static final String SUBMITTED_APPLICATIONS = "/com/example/prueba_javafx/fxml/submitted-applications.fxml";

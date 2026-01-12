@@ -117,4 +117,24 @@ public class EvaluatorDashboardController {
             e.printStackTrace();
         }
     }
+    
+    @FXML
+    private void onApplicationsClick() {
+        try {
+            Stage stage = (Stage) homeIcon.getScene().getWindow();
+            ViewNavigator.navigateTo(stage, ViewNavigator.EVALUATOR_APPLICATIONS);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @FXML
+    private void onReviewsClick() {
+        try {
+            Stage stage = (Stage) homeIcon.getScene().getWindow();
+            ViewNavigator.navigateTo(stage, ViewNavigator.EVALUATOR_REVIEWS);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
