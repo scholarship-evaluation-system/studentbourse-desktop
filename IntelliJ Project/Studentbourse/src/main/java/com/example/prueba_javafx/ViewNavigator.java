@@ -23,6 +23,9 @@ public class ViewNavigator {
     public static final String EVALUATOR_DASHBOARD = "/com/example/prueba_javafx/fxml/evaluator-dashboard.fxml";
     public static final String SCHOLARSHIP_MATCHES = "/com/example/prueba_javafx/fxml/scholarship-matches.fxml";
     public static final String EVALUATOR_APPLICATIONS = "/com/example/prueba_javafx/fxml/evaluator-applications.fxml";
+    public static final String PICKED_APPLICATIONS = "/com/example/prueba_javafx/fxml/picked-applications.fxml";
+    public static final String IN_PROCESS = "/com/example/prueba_javafx/fxml/in-process.fxml";
+    public static final String SUBMITTED_APPLICATIONS = "/com/example/prueba_javafx/fxml/submitted-applications.fxml";
     
     /**
      * Navigate to a new view
@@ -33,6 +36,7 @@ public class ViewNavigator {
     public static void navigateTo(Stage stage, String fxmlPath) throws IOException {
         FXMLLoader loader = new FXMLLoader(ViewNavigator.class.getResource(fxmlPath));
         Parent root = loader.load();
+        stage.setMaximized(false);
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setMaximized(true);
@@ -50,6 +54,7 @@ public class ViewNavigator {
     public static void navigateTo(Stage stage, String fxmlPath, double width, double height) throws IOException {
         FXMLLoader loader = new FXMLLoader(ViewNavigator.class.getResource(fxmlPath));
         Parent root = loader.load();
+        stage.setMaximized(false);
         Scene scene = new Scene(root, width, height);
         stage.setScene(scene);
         stage.setMaximized(true);
@@ -66,6 +71,7 @@ public class ViewNavigator {
     public static Object navigateToWithController(Stage stage, String fxmlPath) throws IOException {
         FXMLLoader loader = new FXMLLoader(ViewNavigator.class.getResource(fxmlPath));
         Parent root = loader.load();
+        stage.setMaximized(false);
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setMaximized(true);

@@ -91,16 +91,31 @@ public class StudentDashboardController {
     
     @FXML
     private void onPickedClick() {
-        System.out.println("Picked clicked - view not implemented yet");
+        try {
+            Stage stage = (Stage) homeIcon.getScene().getWindow();
+            ViewNavigator.navigateTo(stage, ViewNavigator.PICKED_APPLICATIONS);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     @FXML
     private void onInProcessClick() {
-        System.out.println("In Process clicked - view not implemented yet");
+        try {
+            Stage stage = (Stage) homeIcon.getScene().getWindow();
+            ViewNavigator.navigateTo(stage, ViewNavigator.IN_PROCESS);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     @FXML
     private void onSubmittedClick() {
-        System.out.println("Submitted clicked - view not implemented yet");
+        try {
+            Stage stage = (Stage) homeIcon.getScene().getWindow();
+            ViewNavigator.navigateTo(stage, ViewNavigator.SUBMITTED_APPLICATIONS);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

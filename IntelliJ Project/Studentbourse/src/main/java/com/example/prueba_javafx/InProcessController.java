@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Optional;
 
-public class ScholarshipMatchesController {
+public class InProcessController {
 
     @FXML
     private TextField searchField;
@@ -197,8 +197,12 @@ public class ScholarshipMatchesController {
 
     @FXML
     private void onMatchesClick() {
-        // Already on matches page
-        System.out.println("Already on Matches page");
+        try {
+            Stage stage = (Stage) searchField.getScene().getWindow();
+            ViewNavigator.navigateTo(stage, ViewNavigator.SCHOLARSHIP_MATCHES);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -213,12 +217,8 @@ public class ScholarshipMatchesController {
 
     @FXML
     private void onInProcessClick() {
-        try {
-            Stage stage = (Stage) searchField.getScene().getWindow();
-            ViewNavigator.navigateTo(stage, ViewNavigator.IN_PROCESS);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // Already on in process page
+        System.out.println("Already on In Process page");
     }
 
     @FXML

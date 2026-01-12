@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Optional;
 
-public class ScholarshipMatchesController {
+public class SubmittedApplicationsController {
 
     @FXML
     private TextField searchField;
@@ -197,8 +197,12 @@ public class ScholarshipMatchesController {
 
     @FXML
     private void onMatchesClick() {
-        // Already on matches page
-        System.out.println("Already on Matches page");
+        try {
+            Stage stage = (Stage) searchField.getScene().getWindow();
+            ViewNavigator.navigateTo(stage, ViewNavigator.SCHOLARSHIP_MATCHES);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -223,12 +227,8 @@ public class ScholarshipMatchesController {
 
     @FXML
     private void onSubmittedClick() {
-        try {
-            Stage stage = (Stage) searchField.getScene().getWindow();
-            ViewNavigator.navigateTo(stage, ViewNavigator.SUBMITTED_APPLICATIONS);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // Already on submitted applications page
+        System.out.println("Already on Submitted Applications page");
     }
     
     @FXML

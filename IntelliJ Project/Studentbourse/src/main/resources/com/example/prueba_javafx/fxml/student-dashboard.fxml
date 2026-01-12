@@ -70,7 +70,7 @@
                         <Insets top="20" right="0" bottom="0" left="0"/>
                     </padding>
                     
-                    <HBox styleClass="sb-menu-item" spacing="12" alignment="CENTER_LEFT">
+                    <HBox fx:id="matchesMenuItem" styleClass="sb-menu-item" spacing="12" alignment="CENTER_LEFT" onMouseClicked="#onMatchesClick">
                         <ImageView fitWidth="20" fitHeight="20" preserveRatio="true">
                             <image><Image url="@../icons/scholarships.png"/></image>
                         </ImageView>
@@ -78,7 +78,7 @@
                         <cursor><Cursor fx:constant="HAND"/></cursor>
                     </HBox>
                     
-                    <HBox styleClass="sb-menu-item" spacing="12" alignment="CENTER_LEFT">
+                    <HBox fx:id="pickedMenuItem" styleClass="sb-menu-item" spacing="12" alignment="CENTER_LEFT" onMouseClicked="#onPickedClick">
                         <ImageView fitWidth="20" fitHeight="20" preserveRatio="true">
                             <image><Image url="@../icons/bookmark.png"/></image>
                         </ImageView>
@@ -86,7 +86,7 @@
                         <cursor><Cursor fx:constant="HAND"/></cursor>
                     </HBox>
                     
-                    <HBox styleClass="sb-menu-item" spacing="12" alignment="CENTER_LEFT">
+                    <HBox fx:id="inProcessMenuItem" styleClass="sb-menu-item" spacing="12" alignment="CENTER_LEFT" onMouseClicked="#onInProcessClick">
                         <ImageView fitWidth="20" fitHeight="20" preserveRatio="true">
                             <image><Image url="@../icons/applications.png"/></image>
                         </ImageView>
@@ -94,7 +94,7 @@
                         <cursor><Cursor fx:constant="HAND"/></cursor>
                     </HBox>
                     
-                    <HBox styleClass="sb-menu-item" spacing="12" alignment="CENTER_LEFT">
+                    <HBox fx:id="submittedMenuItem" styleClass="sb-menu-item" spacing="12" alignment="CENTER_LEFT" onMouseClicked="#onSubmittedClick">
                         <ImageView fitWidth="20" fitHeight="20" preserveRatio="true">
                             <image><Image url="@../icons/reviews.png"/></image>
                         </ImageView>
