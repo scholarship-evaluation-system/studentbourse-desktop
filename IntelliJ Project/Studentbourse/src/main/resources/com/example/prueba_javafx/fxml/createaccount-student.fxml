@@ -3,7 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
 <BorderPane stylesheets="@../css/createaccount-student.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prueba_javafx.CreateAccountStudentController">
     <top>
@@ -29,12 +28,12 @@
             <VBox fx:id="formContainer" prefHeight="816.0" prefWidth="928.0" styleClass="sb-login-form-container">
                 <HBox styleClass="sb-login-tabs">
                     <Button styleClass="sb-tab-btn, sb-tab-active" text="Create an account" />
-                    <Button styleClass="sb-tab-btn" text="Log in" onAction="#goToStudentLogin" />
+                    <Button onAction="#goToStudentLogin" styleClass="sb-tab-btn" text="Log in" />
                 </HBox>
 
                 <Label fx:id="subtitleLabel" styleClass="sb-login-subtitle" text="Begin your application process by creating an account." wrapText="true" />
 
-                <GridPane hgap="40" styleClass="sb-create-form" vgap="20">
+                <GridPane hgap="40" prefWidth="728.0" styleClass="sb-create-form" vgap="20">
                     <columnConstraints>
                         <ColumnConstraints percentWidth="50" />
                         <ColumnConstraints percentWidth="50" />
@@ -58,8 +57,8 @@
                     <Label text="Confirm Password*" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                     <PasswordField promptText="Retype Password" styleClass="sb-input" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-                    <Label text="University" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="2" />
-                    <ComboBox promptText="Please select the institute or university you are enrolled in" styleClass="sb-input" GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.columnSpan="2" maxWidth="Infinity" />
+                    <Label text="University" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                    <ComboBox maxWidth="Infinity" promptText="Please select the institute or university you are enrolled in" styleClass="sb-input" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="7" />
 
                     <Button styleClass="sb-login-btn" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                <rowConstraints>
