@@ -1,6 +1,9 @@
 package com.example.prueba_javafx;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Label;
@@ -12,7 +15,10 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import org.kordamp.ikonli.javafx.FontIcon;
+
+import java.net.URL;
 
 public class StudentLoginController {
 
@@ -98,6 +104,20 @@ public class StudentLoginController {
 
     @FXML
     private void onCreateAccountClick() {
-        // Navigate to create account page
+        try {
+            URL fxmlUrl = getClass().getResource("fxml/createaccount-student.fxml");
+            if (fxmlUrl == null) {
+                System.err.println("Cannot find fxml/createaccount-student.fxml");
+                return;
+            }
+            Parent root = FXMLLoader.load(fxmlUrl);
+            Stage stage = (Stage) headerIcons.getScene().getWindow();
+            stage.setMaximized(false);
+            Scene scene = new Scene(root, 1280, 800);
+            stage.setScene(scene);
+            stage.setMaximized(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

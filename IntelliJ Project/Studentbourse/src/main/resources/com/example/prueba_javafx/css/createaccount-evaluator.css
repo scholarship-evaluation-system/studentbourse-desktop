@@ -7,7 +7,7 @@
 
 .sb-login-form-container {
     -fx-background-color: #fcf6d9; /* yellow form background like evaluator dashboard */
-    -fx-padding: 12 140 120 140; /* add top padding to show header border line clearly */
+    -fx-padding: 80 140 120 140; /* increased top padding for better centering */
 }
 
 /* Reduce spacing between tabs and subtitle */
