@@ -98,8 +98,23 @@ public class EvaluatorLoginController {
 
     @FXML
     private void onLoginClick() {
-        // Login logic here
-        System.out.println("Evaluator login clicked");
+        // TODO: Add backend validation here later
+        // For now, navigate directly to dashboard
+        try {
+            URL fxmlUrl = getClass().getResource("fxml/evaluator-dashboard.fxml");
+            if (fxmlUrl == null) {
+                System.err.println("Cannot find fxml/evaluator-dashboard.fxml");
+                return;
+            }
+            Parent root = FXMLLoader.load(fxmlUrl);
+            Stage stage = (Stage) headerIcons.getScene().getWindow();
+            stage.setMaximized(false);
+            Scene scene = new Scene(root, 1280, 800);
+            stage.setScene(scene);
+            stage.setMaximized(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

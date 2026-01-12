@@ -58,7 +58,7 @@
                     <Label text="Confirm Password*" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                     <PasswordField promptText="Retype Password" styleClass="sb-input" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-                    <Button styleClass="sb-login-btn" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    <Button styleClass="sb-login-btn" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="6" onAction="#onRegisterClick" />
                <rowConstraints>
                   <RowConstraints />
                   <RowConstraints />
