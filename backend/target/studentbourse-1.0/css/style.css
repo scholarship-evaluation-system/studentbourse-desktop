@@ -1,0 +1,36 @@
+body {
+    font-family: monospace;
+    background: #eef;
+    margin: 0;
+}
+
+header {
+    background: #111;
+    color: #fff;
+    padding: 10px;
+}
+
+nav {
+    background: #ddd;
+    padding: 10px;
+}
+
+nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #000;
+    padding: 12px;
+    margin: 12px;
+    box-shadow: 4px 4px;
+}
+
+.tag {
+    border: 1px solid green;
+    padding: 2px 6px;
+    font-size: 12px;
+}
