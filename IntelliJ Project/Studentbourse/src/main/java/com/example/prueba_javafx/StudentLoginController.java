@@ -101,16 +101,8 @@ public class StudentLoginController {
         // TODO: Add backend validation here later
         // For now, navigate directly to dashboard
         try {
-            URL fxmlUrl = getClass().getResource("fxml/student-dashboard.fxml");
-            if (fxmlUrl == null) {
-                System.err.println("Cannot find fxml/student-dashboard.fxml");
-                return;
-            }
-            Parent root = FXMLLoader.load(fxmlUrl);
             Stage stage = (Stage) headerIcons.getScene().getWindow();
-            stage.setMaximized(false);
-            Scene scene = new Scene(root, 1280, 800);
-            stage.setScene(scene);
+            ViewNavigator.navigateTo(stage, ViewNavigator.STUDENT_DASHBOARD, 1280, 800);
             stage.setMaximized(true);
         } catch (Exception e) {
             e.printStackTrace();
@@ -120,16 +112,8 @@ public class StudentLoginController {
     @FXML
     private void onCreateAccountClick() {
         try {
-            URL fxmlUrl = getClass().getResource("fxml/createaccount-student.fxml");
-            if (fxmlUrl == null) {
-                System.err.println("Cannot find fxml/createaccount-student.fxml");
-                return;
-            }
-            Parent root = FXMLLoader.load(fxmlUrl);
             Stage stage = (Stage) headerIcons.getScene().getWindow();
-            stage.setMaximized(false);
-            Scene scene = new Scene(root, 1280, 800);
-            stage.setScene(scene);
+            ViewNavigator.navigateTo(stage, ViewNavigator.CREATE_ACCOUNT_STUDENT, 1280, 800);
             stage.setMaximized(true);
         } catch (Exception e) {
             e.printStackTrace();

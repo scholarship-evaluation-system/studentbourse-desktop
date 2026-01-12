@@ -1,75 +1,71 @@
 package com.example.prueba_javafx;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.net.URL;
+import javafx.scene.Node;
+import javafx.event.ActionEvent;
+
+import java.io.IOException;
 
 public class ViewTestController {
 
     @FXML
-    private void openRoleSelection() {
-        openView("fxml/role-selection.fxml", "Role Selection");
+    private void openRoleSelection(ActionEvent event) {
+        openView(event, ViewNavigator.ROLE_SELECTION);
     }
 
     @FXML
-    private void openStudentLogin() {
-        openView("fxml/student-login.fxml", "Student Login");
+    private void openStudentLogin(ActionEvent event) {
+        openView(event, ViewNavigator.STUDENT_LOGIN);
     }
 
     @FXML
-    private void openStudentDashboard() {
-        openView("fxml/student-dashboard.fxml", "Student Dashboard");
+    private void openStudentDashboard(ActionEvent event) {
+        openView(event, ViewNavigator.STUDENT_DASHBOARD);
     }
 
     @FXML
-    private void openCreateAccountStudent() {
-        openView("fxml/createaccount-student.fxml", "Create Account - Student");
+    private void openCreateAccountStudent(ActionEvent event) {
+        openView(event, ViewNavigator.CREATE_ACCOUNT_STUDENT);
     }
 
     @FXML
-    private void openEvaluatorLogin() {
-        openView("fxml/evaluator-login.fxml", "Evaluator Login");
+    private void openEvaluatorLogin(ActionEvent event) {
+        openView(event, ViewNavigator.EVALUATOR_LOGIN);
     }
 
     @FXML
-    private void openCreateAccountEvaluator() {
-        openView("fxml/createaccount-evaluator.fxml", "Create Account - Evaluator");
+    private void openEvaluatorDashboard(ActionEvent event) {
+        openView(event, ViewNavigator.EVALUATOR_DASHBOARD);
     }
 
     @FXML
-    private void openEvaluatorDashboard() {
-        openView("fxml/evaluator-dashboard.fxml", "Evaluator Dashboard");
+    private void openCreateAccountEvaluator(ActionEvent event) {
+        openView(event, ViewNavigator.CREATE_ACCOUNT_EVALUATOR);
+    }
+    
+    @FXML
+    private void openScholarshipMatches(ActionEvent event) {
+        openView(event, ViewNavigator.SCHOLARSHIP_MATCHES);
+    }
+    
+    @FXML
+    private void openEvaluatorApplications(ActionEvent event) {
+        openView(event, ViewNavigator.EVALUATOR_APPLICATIONS);
+    }
+    
+    @FXML
+    private void openViewTestMenu(ActionEvent event) {
+        openView(event, "/com/example/prueba_javafx/fxml/view-test-menu.fxml");
     }
 
-    private void openView(String fxmlPath, String title) {
+    private void openView(ActionEvent event, String fxmlPath) {
         try {
-            // Try as relative resource first (relative to this package)
-            URL url = getClass().getResource(fxmlPath);
-            // If not found, try absolute path under package root
-            if (url == null) {
-                String alt = "/com/example/prueba_javafx" + (fxmlPath.startsWith("/") ? fxmlPath : "/" + fxmlPath);
-                url = getClass().getResource(alt);
-            }
-            if (url == null) {
-                System.err.println("FXML resource not found: " + fxmlPath);
-                return;
-            }
-            FXMLLoader loader = new FXMLLoader(url);
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setTitle(title);
-            // Open windows at a consistent laptop-friendly default so they don't
-            // appear in awkward sizes or cover window controls. The user can
-            // still maximize the window afterwards.
-            Scene scene = new Scene(root, 1280, 800);
-            stage.setScene(scene);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            ViewNavigator.navigateTo(stage, fxmlPath, 1280, 800);
             stage.setMaximized(true);
-            stage.show();
-        } catch (Exception e) {
-            System.err.println("Error loading view: " + fxmlPath);
+        } catch (IOException e) {
+            System.err.println("Error opening view: " + fxmlPath);
             e.printStackTrace();
         }
     }

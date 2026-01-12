@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.prueba_javafx.ViewTestMenuController"
+      style="-fx-background-color: #d8e5d0; -fx-font-family: 'Courier New', monospace;"
+      spacing="20">
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+    
+    <!-- Header -->
+    <HBox style="-fx-background-color: white; -fx-border-color: #222; -fx-border-width: 2;"
+          alignment="CENTER">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+        <Label text="StudentBourse - View Navigation Menu" 
+               style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    </HBox>
+    
+    <!-- Description -->
+    <Label text="Click on any view to navigate to it. All HTML pages have been converted to FXML views."
+           style="-fx-font-size: 14px;"
+           wrapText="true">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+    </Label>
+    
+    <!-- Views Grid -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" 
+                style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <GridPane fx:id="viewsGrid" hgap="20" vgap="20" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </GridPane>
+    </ScrollPane>
+    
+    <!-- Footer -->
+    <HBox style="-fx-background-color: white; -fx-border-color: #222; -fx-border-width: 2;"
+          alignment="CENTER" spacing="20">
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+        <Label text="• All views are now accessible through navigation"/>
+        <Label text="• Use the ViewNavigator class for navigation"/>
+    </HBox>
+</VBox>

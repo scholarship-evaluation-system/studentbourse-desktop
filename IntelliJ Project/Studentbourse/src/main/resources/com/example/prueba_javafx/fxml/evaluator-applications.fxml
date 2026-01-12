@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.prueba_javafx.EvaluatorApplicationsController"
+      styleClass="sb-root"
+      stylesheets="@../css/evaluator-applications.css">
+    
+    <!-- Header -->
+    <HBox styleClass="header">
+        <HBox styleClass="header-left">
+            <Label text="Student" styleClass="logo-text"/>
+            <Label text="Bourse" styleClass="logo-accent"/>
+        </HBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <HBox styleClass="header-right" spacing="14" alignment="CENTER">
+            <ImageView styleClass="header-icon" fitWidth="22" fitHeight="22" preserveRatio="true"/>
+            <Region styleClass="divider"/>
+            <ImageView styleClass="header-icon" fitWidth="22" fitHeight="22" preserveRatio="true"/>
+            <Region styleClass="divider"/>
+            <ImageView styleClass="header-icon" fitWidth="22" fitHeight="22" preserveRatio="true"/>
+            <Label text="Roy Batty" styleClass="username"/>
+        </HBox>
+    </HBox>
+    
+    <!-- Main Content -->
+    <HBox styleClass="sb-main" VBox.vgrow="ALWAYS">
+        <!-- Sidebar -->
+        <VBox styleClass="sidebar" spacing="12">
+            <VBox styleClass="filter-container" spacing="10">
+                <ComboBox fx:id="universitySelect" styleClass="sidebar-select,university" promptText="ABC University"/>
+                
+                <ComboBox fx:id="semesterSelect" styleClass="sidebar-select,semester" promptText="2025 Fall"/>
+            </VBox>
+            
+            <Hyperlink text="Applications" styleClass="nav-btn,active" onAction="#onApplicationsClick">
+                <graphic>
+                    <ImageView styleClass="icon" fitWidth="20" fitHeight="20" preserveRatio="true"/>
+                </graphic>
+            </Hyperlink>
+            
+            <Hyperlink text="Reviews" styleClass="nav-btn" onAction="#onReviewsClick">
+                <graphic>
+                    <ImageView styleClass="icon" fitWidth="20" fitHeight="20" preserveRatio="true"/>
+                </graphic>
+            </Hyperlink>
+        </VBox>
+        
+        <!-- Content Section -->
+        <VBox styleClass="sb-content" HBox.hgrow="ALWAYS">
+            <HBox styleClass="sb-content-header" alignment="CENTER_LEFT">
+                <Label text="Applications" styleClass="content-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <TextField fx:id="searchField" promptText="Type here..." styleClass="search-box"/>
+            </HBox>
+            
+            <!-- Applications Grid -->
+            <GridPane fx:id="applicationsGrid" styleClass="sb-applications-grid" hgap="20" vgap="20" VBox.vgrow="ALWAYS">
+                <!-- Applications will be added dynamically -->
+            </GridPane>
+        </VBox>
+    </HBox>
+    
+    <!-- Footer -->
+    <HBox styleClass="footer-bar" spacing="10" alignment="CENTER">
+        <Label text="•"/>
+        <Hyperlink text="Terms of use" styleClass="footer-link"/>
+        <Label text="•"/>
+        <Hyperlink text="Contact Us" styleClass="footer-link"/>
+    </HBox>
+</VBox>

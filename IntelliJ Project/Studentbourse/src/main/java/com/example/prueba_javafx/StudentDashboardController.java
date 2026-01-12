@@ -65,15 +65,42 @@ public class StudentDashboardController {
     
     private void goToCoverPage() {
         try {
-            URL fxmlLocation = getClass().getResource("/com/example/prueba_javafx/fxml/cover-page.fxml");
-            Parent root = FXMLLoader.load(fxmlLocation);
             Stage stage = (Stage) homeIcon.getScene().getWindow();
-            stage.setMaximized(false);
-            Scene scene = new Scene(root, 1280, 800);
-            stage.setScene(scene);
+            ViewNavigator.navigateTo(stage, ViewNavigator.COVER_PAGE, 1280, 800);
             stage.setMaximized(true);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    @FXML
+    private void onMatchesClick() {
+        try {
+            Stage stage = (Stage) homeIcon.getScene().getWindow();
+            ViewNavigator.navigateTo(stage, ViewNavigator.SCHOLARSHIP_MATCHES, 1280, 800);
+            stage.setMaximized(true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @FXML
+    private void onRecommendedClick() {
+        System.out.println("Recommended clicked - view not implemented yet");
+    }
+    
+    @FXML
+    private void onPickedClick() {
+        System.out.println("Picked clicked - view not implemented yet");
+    }
+    
+    @FXML
+    private void onInProcessClick() {
+        System.out.println("In Process clicked - view not implemented yet");
+    }
+    
+    @FXML
+    private void onSubmittedClick() {
+        System.out.println("Submitted clicked - view not implemented yet");
     }
 }

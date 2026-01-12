@@ -84,16 +84,8 @@ public class RoleSelectionController {
     @FXML
     private void onStudentClick(ActionEvent event) {
         try {
-            URL fxmlUrl = getClass().getResource("fxml/student-login.fxml");
-            if (fxmlUrl == null) {
-                System.err.println("Cannot find fxml/student-login.fxml");
-                return;
-            }
-            Parent root = FXMLLoader.load(fxmlUrl);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setMaximized(false);
-            Scene scene = new Scene(root, 1280, 800);
-            stage.setScene(scene);
+            ViewNavigator.navigateTo(stage, ViewNavigator.STUDENT_LOGIN, 1280, 800);
             stage.setMaximized(true);
         } catch (Exception e) {
             e.printStackTrace();
@@ -103,16 +95,8 @@ public class RoleSelectionController {
     @FXML
     private void onEvaluatorClick(ActionEvent event) {
         try {
-            URL fxmlUrl = getClass().getResource("fxml/evaluator-login.fxml");
-            if (fxmlUrl == null) {
-                System.err.println("Cannot find fxml/evaluator-login.fxml");
-                return;
-            }
-            Parent root = FXMLLoader.load(fxmlUrl);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setMaximized(false);
-            Scene scene = new Scene(root, 1280, 800);
-            stage.setScene(scene);
+            ViewNavigator.navigateTo(stage, ViewNavigator.EVALUATOR_LOGIN, 1280, 800);
             stage.setMaximized(true);
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.prueba_javafx.ScholarshipMatchesController"
+      styleClass="sb-root"
+      stylesheets="@../css/scholarship-matches.css">
+    
+    <!-- Header -->
+    <HBox styleClass="header">
+        <HBox styleClass="header-left">
+            <Label text="Student" styleClass="logo-text"/>
+            <Label text="Bourse" styleClass="logo-accent"/>
+        </HBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <HBox styleClass="header-right" spacing="14" alignment="CENTER">
+            <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
+                <image>
+                    <javafx.scene.image.Image url="@../icons/mail.png"/>
+                </image>
+            </ImageView>
+            <Region styleClass="divider"/>
+            <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
+                <image>
+                    <javafx.scene.image.Image url="@../icons/home.png"/>
+                </image>
+            </ImageView>
+            <Region styleClass="divider"/>
+            <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
+                <image>
+                    <javafx.scene.image.Image url="@../icons/settings.png"/>
+                </image>
+            </ImageView>
+            <Label text="Roy Batty" styleClass="username"/>
+        </HBox>
+    </HBox>
+    
+    <!-- Main Layout -->
+    <HBox VBox.vgrow="ALWAYS">
+        <!-- Sidebar -->
+        <VBox styleClass="sidebar" spacing="12">
+            <Button text="My Scholarships" styleClass="my-scholarships-btn"/>
+            
+            <ComboBox fx:id="semesterSelect" styleClass="semester-dropdown" promptText="2025 Fall"/>
+            
+            <Button fx:id="matchesBtn" styleClass="nav-btn,active" onAction="#onMatchesClick"/>
+            
+            <Button fx:id="pickedBtn" styleClass="nav-btn" onAction="#onPickedClick"/>
+            
+            <Button fx:id="inProcessBtn" styleClass="nav-btn" onAction="#onInProcessClick"/>
+            
+            <Button fx:id="submittedBtn" styleClass="nav-btn" onAction="#onSubmittedClick"/>
+        </VBox>
+        
+        <!-- Main Content -->
+        <VBox styleClass="content" HBox.hgrow="ALWAYS">
+            <!-- Top Bar -->
+            <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="20">
+                <Label text="Scholarship Matches" styleClass="content-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <TextField fx:id="searchField" promptText="Type here..." styleClass="search-box"/>
+            </HBox>
+            
+            <Label text="132 Scholarships worth 80,000 €" styleClass="sch-info"/>
+            <Separator styleClass="section-divider"/>
+            
+            <!-- Scholarship Cards -->
+            <ScrollPane styleClass="scroll-pane" fitToWidth="true" VBox.vgrow="ALWAYS">
+                <VBox fx:id="cardList" styleClass="card-list" spacing="20"/>
+            </ScrollPane>
+        </VBox>
+    </HBox>
+    
+    <!-- Footer -->
+    <HBox styleClass="footer-bar" spacing="10" alignment="CENTER">
+        <Label text="•"/>
+        <Hyperlink text="Terms of use" styleClass="footer-link"/>
+        <Label text="•"/>
+        <Hyperlink text="Contact Us" styleClass="footer-link"/>
+    </HBox>
+</VBox>
