@@ -25,7 +25,7 @@
 }
 
 .logo-accent {
-    -fx-text-fill: #2fa86f;
+    -fx-text-fill: #f7c948;
     -fx-font-size: 24px;
     -fx-font-weight: bold;
 }
@@ -90,6 +90,21 @@
 .filter-container {
     -fx-spacing: 10;
     -fx-padding: 0 0 20 0;
+}
+
+.dashboard-btn {
+    -fx-background-color: #f7c948;
+    -fx-text-fill: #222222;
+    -fx-padding: 12 16;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-color: #222222;
+    -fx-border-width: 2;
+    -fx-cursor: hand;
+}
+
+.dashboard-btn:hover {
+    -fx-background-color: #f5c335;
 }
 
 .sidebar-select {
@@ -201,16 +216,19 @@
     -fx-background-color: white;
     -fx-border-color: #222222;
     -fx-border-width: 2 0 0 0;
-    -fx-padding: 16 30 16 30;
+    -fx-padding: 12 30 12 30;
     -fx-spacing: 10;
     -fx-alignment: center-left;
+    -fx-pref-height: 50px;
 }
 
 .footer-link {
     -fx-text-fill: #222222;
     -fx-font-size: 13px;
+    -fx-underline: false;
 }
 
 .footer-link:hover {
     -fx-text-fill: #2fa86f;
+    -fx-underline: true;
 }

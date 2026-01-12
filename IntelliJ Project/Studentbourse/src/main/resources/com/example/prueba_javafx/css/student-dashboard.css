@@ -7,11 +7,12 @@
 
 /* ===== HEADER ===== */
 .sb-header {
-    -fx-padding: 16 24;
+    -fx-padding: 16 30;
     -fx-background-color: #ffffff;
     -fx-border-color: #222222;
     -fx-border-width: 0 0 2 0;
     -fx-alignment: center;
+    -fx-pref-height: 60px;
 }
 
 .sb-logo {
@@ -32,6 +33,13 @@
 
 .sb-header-icons {
     -fx-spacing: 16;
+}
+
+.sb-divider {
+    -fx-min-width: 1px;
+    -fx-pref-width: 1px;
+    -fx-min-height: 22px;
+    -fx-background-color: #222222;
 }
 
 .sb-icon-img {

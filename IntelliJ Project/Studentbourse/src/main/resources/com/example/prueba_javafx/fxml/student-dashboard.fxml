@@ -23,15 +23,17 @@
             
             <Region HBox.hgrow="ALWAYS"/>
             
-            <HBox styleClass="sb-header-icons" spacing="16" alignment="CENTER_RIGHT">
-                <ImageView styleClass="sb-icon-img" fitWidth="32" fitHeight="32" preserveRatio="true">
+            <HBox styleClass="sb-header-icons" spacing="14" alignment="CENTER_RIGHT">
+                <ImageView styleClass="sb-icon-img" fitWidth="24" fitHeight="24" preserveRatio="true">
                     <image><Image url="@../icons/mail.png"/></image>
                     <cursor><Cursor fx:constant="HAND"/></cursor>
                 </ImageView>
-                <ImageView fx:id="homeIcon" styleClass="sb-icon-img" fitWidth="32" fitHeight="32" preserveRatio="true">
+                <Region styleClass="sb-divider"/>
+                <ImageView fx:id="homeIcon" styleClass="sb-icon-img" fitWidth="24" fitHeight="24" preserveRatio="true">
                     <image><Image url="@../icons/home.png"/></image>
                     <cursor><Cursor fx:constant="HAND"/></cursor>
                 </ImageView>
+                <Region styleClass="sb-divider"/>
                 <HBox styleClass="sb-user-profile" spacing="8" alignment="CENTER">
                     <ImageView fitWidth="24" fitHeight="24" preserveRatio="true">
                         <image><Image url="@../icons/settings.png"/></image>
