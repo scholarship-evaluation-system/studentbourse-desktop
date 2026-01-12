@@ -35,6 +35,7 @@ public class ViewNavigator {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setMaximized(true);
         stage.centerOnScreen();
     }
     
@@ -51,6 +52,7 @@ public class ViewNavigator {
         Parent root = loader.load();
         Scene scene = new Scene(root, width, height);
         stage.setScene(scene);
+        stage.setMaximized(true);
         stage.centerOnScreen();
     }
     
@@ -66,6 +68,7 @@ public class ViewNavigator {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setMaximized(true);
         stage.centerOnScreen();
         return loader.getController();
     }

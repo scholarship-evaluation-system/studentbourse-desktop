@@ -25,11 +25,15 @@
                 </image>
             </ImageView>
             <Region styleClass="divider"/>
-            <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
-                <image>
-                    <javafx.scene.image.Image url="@../icons/home.png"/>
-                </image>
-            </ImageView>
+            <Button onAction="#onHomeClick" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 0; -fx-cursor: hand;">
+                <graphic>
+                    <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
+                        <image>
+                            <javafx.scene.image.Image url="@../icons/home.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
             <Region styleClass="divider"/>
             <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
                 <image>

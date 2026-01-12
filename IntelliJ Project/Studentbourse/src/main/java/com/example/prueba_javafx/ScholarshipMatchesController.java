@@ -3,8 +3,11 @@ package com.example.prueba_javafx;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -13,6 +16,7 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class ScholarshipMatchesController {
 
@@ -200,5 +204,34 @@ public class ScholarshipMatchesController {
     @FXML
     private void onSubmittedClick() {
         System.out.println("Submitted clicked - view not implemented yet");
+    }
+    
+    @FXML
+    private void onHomeClick() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Log Out");
+        alert.setHeaderText("Are you sure you want to log out?");
+        alert.setContentText("You will be returned to the home page.");
+        
+        // Customize buttons
+        ButtonType continueButton = new ButtonType("Continue");
+        ButtonType cancelButton = new ButtonType("Cancel");
+        alert.getButtonTypes().setAll(continueButton, cancelButton);
+        
+        // Apply custom styling
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource("/com/example/prueba_javafx/css/alert-style.css").toExternalForm());
+        dialogPane.getStyleClass().add("custom-alert");
+        
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == continueButton) {
+            try {
+                Stage stage = (Stage) searchField.getScene().getWindow();
+                ViewNavigator.navigateTo(stage, ViewNavigator.COVER_PAGE, 1280, 800);
+                stage.setMaximized(true);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

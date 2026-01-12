@@ -19,11 +19,27 @@
         </HBox>
         <Region HBox.hgrow="ALWAYS"/>
         <HBox styleClass="header-right" spacing="14" alignment="CENTER">
-            <ImageView styleClass="header-icon" fitWidth="22" fitHeight="22" preserveRatio="true"/>
+            <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
+                <image>
+                    <javafx.scene.image.Image url="@../icons/mail.png"/>
+                </image>
+            </ImageView>
             <Region styleClass="divider"/>
-            <ImageView styleClass="header-icon" fitWidth="22" fitHeight="22" preserveRatio="true"/>
+            <Button onAction="#onHomeClick" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 0; -fx-cursor: hand;">
+                <graphic>
+                    <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
+                        <image>
+                            <javafx.scene.image.Image url="@../icons/home.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
             <Region styleClass="divider"/>
-            <ImageView styleClass="header-icon" fitWidth="22" fitHeight="22" preserveRatio="true"/>
+            <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
+                <image>
+                    <javafx.scene.image.Image url="@../icons/settings.png"/>
+                </image>
+            </ImageView>
             <Label text="Roy Batty" styleClass="username"/>
         </HBox>
     </HBox>
@@ -38,17 +54,9 @@
                 <ComboBox fx:id="semesterSelect" styleClass="sidebar-select,semester" promptText="2025 Fall"/>
             </VBox>
             
-            <Hyperlink text="Applications" styleClass="nav-btn,active" onAction="#onApplicationsClick">
-                <graphic>
-                    <ImageView styleClass="icon" fitWidth="20" fitHeight="20" preserveRatio="true"/>
-                </graphic>
-            </Hyperlink>
+            <Button fx:id="applicationsBtn" styleClass="nav-btn,active" onAction="#onApplicationsClick"/>
             
-            <Hyperlink text="Reviews" styleClass="nav-btn" onAction="#onReviewsClick">
-                <graphic>
-                    <ImageView styleClass="icon" fitWidth="20" fitHeight="20" preserveRatio="true"/>
-                </graphic>
-            </Hyperlink>
+            <Button fx:id="reviewsBtn" styleClass="nav-btn" onAction="#onReviewsClick"/>
         </VBox>
         
         <!-- Content Section -->
@@ -67,7 +75,8 @@
     </HBox>
     
     <!-- Footer -->
-    <HBox styleClass="footer-bar" spacing="10" alignment="CENTER">
+    <HBox styleClass="footer-bar" spacing="10" alignment="CENTER_LEFT">
+        <Region HBox.hgrow="ALWAYS"/>
         <Label text="•"/>
         <Hyperlink text="Terms of use" styleClass="footer-link"/>
         <Label text="•"/>
