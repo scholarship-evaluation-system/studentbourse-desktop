@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.studentbourse.controller.StudentApplicationsController"
+      styleClass="sb-root"
+      stylesheets="@../css/student-applications.css">
+
+    <HBox styleClass="header">
+        <HBox styleClass="header-left">
+            <Label text="Student" styleClass="logo-text"/>
+            <Label text="Bourse" styleClass="logo-accent"/>
+        </HBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <HBox styleClass="header-right" spacing="14" alignment="CENTER">
+            <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
+                <image>
+                    <javafx.scene.image.Image url="@/assets/icons/mail.png"/>
+                </image>
+            </ImageView>
+            <Region styleClass="divider"/>
+            <Button onAction="#onHomeClick" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 0; -fx-cursor: hand;">
+                <graphic>
+                    <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
+                        <image>
+                            <javafx.scene.image.Image url="@/assets/icons/home.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Region styleClass="divider"/>
+            <ImageView styleClass="header-icon" fitWidth="24" fitHeight="24" preserveRatio="true">
+                <image>
+                    <javafx.scene.image.Image url="@/assets/icons/settings.png"/>
+                </image>
+            </ImageView>
+            <Label text="Roy Batty" styleClass="username"/>
+        </HBox>
+    </HBox>
+
+    <HBox VBox.vgrow="ALWAYS">
+        <VBox styleClass="sidebar" spacing="12">
+            <Button text="My Scholarships" styleClass="my-scholarships-btn" onAction="#onMyScholarshipsClick"/>
+
+            <ComboBox fx:id="semesterSelect" styleClass="semester-dropdown" promptText="2025 Fall"/>
+
+            <Button fx:id="matchesBtn" styleClass="nav-btn" onAction="#onMatchesClick"/>
+
+            <Button fx:id="pickedBtn" styleClass="nav-btn" onAction="#onPickedClick"/>
+
+            <Button fx:id="inProcessBtn" styleClass="nav-btn" onAction="#onInProcessClick"/>
+
+            <Button fx:id="submittedBtn" styleClass="nav-btn,active" onAction="#onSubmittedClick"/>
+        </VBox>
+
+        <VBox styleClass="content" HBox.hgrow="ALWAYS">
+            <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="20">
+                <Label text="Submitted Applications" styleClass="content-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <TextField fx:id="searchField" promptText="Type here..." styleClass="search-box"/>
+            </HBox>
+
+            <Label text="3 Applications submitted" styleClass="sch-info"/>
+            <Separator styleClass="section-divider"/>
+
+            <ScrollPane styleClass="scroll-pane" fitToWidth="true" VBox.vgrow="ALWAYS">
+                <VBox fx:id="cardList" styleClass="card-list" spacing="20"/>
+            </ScrollPane>
+        </VBox>
+    </HBox>
+
+    <HBox styleClass="footer-bar" spacing="10" alignment="CENTER_LEFT">
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label text="•"/>
+        <Hyperlink text="Terms of use" styleClass="footer-link"/>
+        <Label text="•"/>
+        <Hyperlink text="Contact Us" styleClass="footer-link"/>
+    </HBox>
+</VBox>

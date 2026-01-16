@@ -1,0 +1,28 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #f5f6fa;
+    -fx-padding: 24;
+}
+
+.stats-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2f3640;
+}
+
+.chart {
+    -fx-background-color: #ffffff;
+    -fx-padding: 16;
+    -fx-border-color: #dcdde1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.axis-label {
+    -fx-text-fill: #2f3640;
+    -fx-font-size: 12px;
+}
+
+.chart-bar {
+    -fx-bar-fill: #4cd137;
+}

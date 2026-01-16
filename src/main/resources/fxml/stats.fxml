@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.studentbourse.controller.StatsController"
+      stylesheets="@../css/stats.css">
+
+    <Label text="Scholarship Statistics"
+           styleClass="stats-title"/>
+
+    <BarChart fx:id="applicationsChart">
+        <xAxis>
+            <CategoryAxis label="Week"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Applications"/>
+        </yAxis>
+    </BarChart>
+
+    <BarChart fx:id="fundsChart">
+        <xAxis>
+            <CategoryAxis label="Week"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Funds Awarded"/>
+        </yAxis>
+    </BarChart>
+
+</VBox>
