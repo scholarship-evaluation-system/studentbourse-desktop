@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.studentbourse.controller.EvaluatorDashboardController"
+            stylesheets="@../css/evaluator-dashboard.css"
+            styleClass="root">
+
+    <top>
+        <HBox styleClass="sb-header">
+            <HBox styleClass="sb-logo" alignment="CENTER_LEFT">
+                <Label text="Student" styleClass="sb-logo-text"/>
+                <Label text="Bourse" styleClass="sb-logo-accent"/>
+            </HBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <HBox styleClass="sb-header-icons" spacing="14" alignment="CENTER_RIGHT">
+                <ImageView fx:id="notificationIcon"
+                           styleClass="sb-icon-img"
+                           fitWidth="24"
+                           fitHeight="24"
+                           preserveRatio="true"
+                           pickOnBounds="true"
+                           onMouseClicked="#onNotificationsClick">
+                    <image><Image url="@/assets/icons/mail.png"/></image>
+                    <cursor><Cursor fx:constant="HAND"/></cursor>
+                </ImageView>
+                <Region styleClass="sb-divider"/>
+                <ImageView fx:id="homeIcon" styleClass="sb-icon-img" fitWidth="24" fitHeight="24" preserveRatio="true" pickOnBounds="true" onMouseClicked="#onHomeClick">
+                    <image><Image url="@/assets/icons/home.png"/></image>
+                    <cursor><Cursor fx:constant="HAND"/></cursor>
+                </ImageView>
+                <Region styleClass="sb-divider"/>
+                <HBox fx:id="profileBox"
+                      spacing="0"
+                      alignment="CENTER"
+                      pickOnBounds="true"
+                      onMouseClicked="#onProfileClick">
+                    <ImageView styleClass="sb-icon-img"
+                               fitWidth="24"
+                               fitHeight="24"
+                               preserveRatio="true">
+                        <image><Image url="@/assets/icons/settings.png"/></image>
+                    </ImageView>
+                    <cursor><Cursor fx:constant="HAND"/></cursor>
+                </HBox>
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox styleClass="sb-main">
+            <VBox styleClass="sb-sidebar" spacing="12">
+                <padding>
+                    <Insets top="20" right="16" bottom="20" left="16"/>
+                </padding>
+
+                <ComboBox fx:id="universityDropdown" promptText="ABC University" styleClass="sb-dropdown">
+                    <cursor><Cursor fx:constant="HAND"/></cursor>
+                </ComboBox>
+
+                <ComboBox fx:id="semesterDropdown" promptText="2025 Fall" styleClass="sb-dropdown">
+                    <cursor><Cursor fx:constant="HAND"/></cursor>
+                </ComboBox>
+
+                <VBox styleClass="sb-menu" spacing="8">
+                    <padding>
+                        <Insets top="20" right="0" bottom="0" left="0"/>
+                    </padding>
+
+                    <HBox fx:id="applicationsMenuItem" styleClass="sb-menu-item" spacing="12" alignment="CENTER_LEFT" onMouseClicked="#onApplicationsClick">
+                        <ImageView fitWidth="24" fitHeight="24" preserveRatio="true">
+                            <image><Image url="@/assets/icons/applications.png"/></image>
+                        </ImageView>
+                        <Label text="Applications" styleClass="sb-menu-text"/>
+                        <cursor><Cursor fx:constant="HAND"/></cursor>
+                    </HBox>
+
+                    <HBox fx:id="reviewsMenuItem" styleClass="sb-menu-item" spacing="12" alignment="CENTER_LEFT" onMouseClicked="#onReviewsClick">
+                        <ImageView fitWidth="24" fitHeight="24" preserveRatio="true">
+                            <image><Image url="@/assets/icons/reviews.png"/></image>
+                        </ImageView>
+                        <Label text="Reviews" styleClass="sb-menu-text"/>
+                        <cursor><Cursor fx:constant="HAND"/></cursor>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+            <VBox styleClass="sb-dashboard" spacing="20" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <HBox styleClass="sb-search-container" alignment="CENTER_LEFT">
+                    <TextField promptText="Type here ..." styleClass="sb-search-input" HBox.hgrow="ALWAYS"/>
+                    <Label text="🔍" styleClass="sb-search-icon"/>
+                </HBox>
+
+                <GridPane styleClass="sb-cards-grid" hgap="20" vgap="20">
+
+                    <VBox styleClass="sb-card" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16"/>
+                        </padding>
+                        <HBox alignment="CENTER_LEFT">
+                            <Label text="€" styleClass="sb-card-icon"/>
+                        </HBox>
+                        <Label text="Total Utilization" styleClass="sb-card-title"/>
+                        <Label text="2,000 of 8,000 €" styleClass="sb-card-value"/>
+                        <ProgressBar progress="0.25" styleClass="sb-card-progress" maxWidth="Infinity"/>
+                        <Label text="25%" styleClass="sb-card-percentage"/>
+                    </VBox>
+
+                    <VBox styleClass="sb-card" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16"/>
+                        </padding>
+                        <HBox alignment="CENTER_LEFT">
+                            <ImageView fitWidth="40" fitHeight="40" preserveRatio="true">
+                                <image><Image url="@/assets/icons/students.png"/></image>
+                            </ImageView>
+                        </HBox>
+                        <Label text="Awarded Students" styleClass="sb-card-title"/>
+                        <Label text="450 of 900" styleClass="sb-card-value"/>
+                        <ProgressBar progress="0.50" styleClass="sb-card-progress" maxWidth="Infinity"/>
+                        <Label text="50%" styleClass="sb-card-percentage"/>
+                    </VBox>
+
+                    <VBox styleClass="sb-card" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16"/>
+                        </padding>
+                        <HBox alignment="CENTER_LEFT">
+                            <ImageView fitWidth="40" fitHeight="40" preserveRatio="true">
+                                <image><Image url="@/assets/icons/applications.png"/></image>
+                            </ImageView>
+                        </HBox>
+                        <Label text="Applications Evaluated" styleClass="sb-card-title"/>
+                        <Label text="300 of 900" styleClass="sb-card-value"/>
+                        <ProgressBar progress="0.30" styleClass="sb-card-progress" maxWidth="Infinity"/>
+                        <Label text="30%" styleClass="sb-card-percentage"/>
+                    </VBox>
+
+                    <VBox styleClass="sb-card" spacing="10" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16"/>
+                        </padding>
+                        <HBox alignment="CENTER_LEFT">
+                            <ImageView fitWidth="40" fitHeight="40" preserveRatio="true">
+                                <image><Image url="@/assets/icons/reviews.png"/></image>
+                            </ImageView>
+                        </HBox>
+                        <Label text="Reviews Completed" styleClass="sb-card-title"/>
+                        <Label text="180 of 300" styleClass="sb-card-value"/>
+                        <ProgressBar progress="0.60" styleClass="sb-card-progress" maxWidth="Infinity"/>
+                        <Label text="60%" styleClass="sb-card-percentage"/>
+                    </VBox>
+                </GridPane>
+
+                <HBox spacing="20" VBox.vgrow="ALWAYS">
+                    <VBox styleClass="sb-graph-section" spacing="0" HBox.hgrow="ALWAYS">
+                        <HBox styleClass="sb-tabs">
+                            <Button text="Students Awarded" styleClass="sb-tab-button, sb-tab-active" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                                <cursor><Cursor fx:constant="HAND"/></cursor>
+                            </Button>
+                            <Button text="Funds Awarded" styleClass="sb-tab-button" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                                <cursor><Cursor fx:constant="HAND"/></cursor>
+                            </Button>
+                        </HBox>
+
+                        <VBox styleClass="sb-graph-content" VBox.vgrow="ALWAYS">
+                            <padding>
+                                <Insets top="20" right="20" bottom="20" left="20"/>
+                            </padding>
+
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="1,204" styleClass="sb-graph-value"/>
+                                <Label text="↘ 2.5%" styleClass="sb-graph-change"/>
+                            </HBox>
+
+                            <Label text="Graph Example" styleClass="sb-graph-title"/>
+
+                            <BarChart fx:id="barChart" styleClass="sb-chart" VBox.vgrow="ALWAYS">
+                                <xAxis>
+                                    <CategoryAxis side="BOTTOM" styleClass="sb-chart-axis"/>
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis side="LEFT" styleClass="sb-chart-axis"/>
+                                </yAxis>
+                            </BarChart>
+                        </VBox>
+                    </VBox>
+
+                    <VBox styleClass="sb-action-cards" spacing="16">
+
+                        <VBox styleClass="sb-action-card" spacing="12">
+                            <padding>
+                                <Insets top="16" right="16" bottom="16" left="16"/>
+                            </padding>
+                            <HBox spacing="12" alignment="CENTER_LEFT">
+                                <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                    <image><Image url="@/assets/icons/bell.png"/></image>
+                                </ImageView>
+                                <Label text="Incomplete Applications" styleClass="sb-action-title" HBox.hgrow="ALWAYS"/>
+                            </HBox>
+                            <Button text="Send Reminder" styleClass="sb-reminder-button">
+                                <cursor><Cursor fx:constant="HAND"/></cursor>
+                            </Button>
+                        </VBox>
+
+                        <HBox styleClass="sb-action-card-simple" spacing="12" alignment="CENTER_LEFT">
+                            <padding>
+                                <Insets top="16" right="16" bottom="16" left="16"/>
+                            </padding>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <image><Image url="@/assets/icons/applications.png"/></image>
+                            </ImageView>
+                            <Label text="Evaluate Applications" styleClass="sb-action-title" HBox.hgrow="ALWAYS"/>
+                            <Label text="→" styleClass="sb-action-arrow"/>
+                            <cursor><Cursor fx:constant="HAND"/></cursor>
+                        </HBox>
+
+                        <HBox styleClass="sb-action-card-simple" spacing="12" alignment="CENTER_LEFT">
+                            <padding>
+                                <Insets top="16" right="16" bottom="16" left="16"/>
+                            </padding>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <image><Image url="@/assets/icons/statistics.png"/></image>
+                            </ImageView>
+                            <Label text="Retrieve Statistics" styleClass="sb-action-title" HBox.hgrow="ALWAYS"/>
+                            <Label text="→" styleClass="sb-action-arrow"/>
+                            <cursor><Cursor fx:constant="HAND"/></cursor>
+                        </HBox>
+
+                        <HBox styleClass="sb-action-card-simple" spacing="12" alignment="CENTER_LEFT">
+                            <padding>
+                                <Insets top="16" right="16" bottom="16" left="16"/>
+                            </padding>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <image><Image url="@/assets/icons/reviews.png"/></image>
+                            </ImageView>
+                            <Label text="Review Evaluated Applications" styleClass="sb-action-title" HBox.hgrow="ALWAYS"/>
+                            <Label text="→" styleClass="sb-action-arrow"/>
+                            <cursor><Cursor fx:constant="HAND"/></cursor>
+                        </HBox>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox styleClass="sb-footer" spacing="20" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="12" right="24" bottom="12" left="24"/>
+            </padding>
+            <Hyperlink text="• Terms of use" styleClass="sb-footer-link">
+                <cursor><Cursor fx:constant="HAND"/></cursor>
+            </Hyperlink>
+            <Hyperlink text="• Contact Us" styleClass="sb-footer-link">
+                <cursor><Cursor fx:constant="HAND"/></cursor>
+            </Hyperlink>
+        </HBox>
+    </bottom>
+</BorderPane>

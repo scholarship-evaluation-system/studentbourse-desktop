@@ -1,0 +1,133 @@
+.root {
+    -fx-font-family: 'Courier New', Courier, monospace;
+    -fx-background-color: #f5f5f5;
+}
+
+.sb-header {
+    -fx-padding: 16 24;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #222;
+    -fx-border-width: 0 0 2 0;
+    -fx-alignment: center-left;
+}
+
+.sb-logo {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+.sb-logo-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222;
+}
+
+.sb-logo-accent {
+    -fx-text-fill: #7fb069;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.sb-header-icons {
+    -fx-alignment: center-right;
+    -fx-spacing: 16;
+}
+
+.sb-icon-img {
+    -fx-cursor: hand;
+}
+
+.sb-header-icon {
+    -fx-font-size: 20px;
+    -fx-fill: #222;
+    -fx-cursor: hand;
+}
+
+.sb-role-main {
+    -fx-alignment: center-left;
+    -fx-min-height: 600px;
+}
+
+.sb-role-image {
+    -fx-border-color: #222;
+    -fx-border-width: 0 2 2 0;
+    -fx-padding: 0;
+    -fx-alignment: center;
+    -fx-background-insets: 0;
+}
+
+.sb-role-image > ImageView {
+    -fx-preserve-ratio: true;
+}
+
+.sb-role-container {
+    -fx-padding: 120 140;
+    -fx-spacing: 24;
+    -fx-alignment: top-left;
+    -fx-background-color: transparent;
+}
+
+.sb-role-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-background-color: #222;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 8 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 0, 0, 0, 0);
+}
+
+.sb-role-description {
+    -fx-font-size: 18px;
+    -fx-text-fill: #222;
+    -fx-wrap-text: true;
+    -fx-padding: 18 0 36 0;
+}
+
+.sb-role-buttons {
+    -fx-spacing: 30;
+    -fx-alignment: center-left;
+}
+
+.sb-role-btn {
+    -fx-padding: 16 50;
+    -fx-font-family: 'Courier New', Courier, monospace;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-color: #222;
+    -fx-border-width: 2;
+    -fx-cursor: hand;
+    -fx-min-width: 160;
+    -fx-background-radius: 2;
+}
+
+.sb-student-btn {
+    -fx-background-color: #7fb069;
+    -fx-text-fill: #ffffff;
+}
+
+.sb-student-btn:hover {
+    -fx-background-color: #6a9556;
+}
+
+.sb-evaluator-btn {
+    -fx-background-color: #ffb800;
+    -fx-text-fill: #ffffff;
+}
+
+.sb-evaluator-btn:hover {
+    -fx-background-color: #e6a700;
+}
+
+.sb-footer {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #222;
+    -fx-border-width: 2 0 0 0;
+    -fx-padding: 16 24;
+    -fx-alignment: center-right;
+    -fx-spacing: 20;
+}
+
+.sb-footer-link {
+    -fx-text-fill: #222;
+    -fx-font-size: 14px;
+}

@@ -1,0 +1,15 @@
+<VBox spacing="15" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.studentbourse.controller.EvaluatorProfileController"
+      stylesheets="@/css/evaluator-profile.css">
+
+    <Label text="Evaluator Profile" styleClass="title"/>
+
+    <TextField fx:id="nameField" promptText="Name"/>
+    <TextField fx:id="emailField" promptText="Email"/>
+    <PasswordField fx:id="passwordField" promptText="Password"/>
+
+    <Button text="Save Changes" onAction="#save"/>
+    <Button text="Back to Dashboard" onAction="#back"/>
+    <Label fx:id="statusLabel"/>
+</VBox>

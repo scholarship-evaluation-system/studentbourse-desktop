@@ -1,0 +1,93 @@
+@import url("student-login.css");
+
+.root {
+    -fx-background-color: #fcf6d9;
+    -fx-font-family: 'Courier New', Courier, monospace;
+}
+
+.sb-login-form-container {
+    -fx-background-color: #fcf6d9;
+    -fx-padding: 80 100 60 100;
+    -fx-spacing: 16;
+}
+
+.sb-login-tabs {
+    -fx-padding: 0 0 12 0;
+    -fx-spacing: 20;
+}
+
+.sb-tab-btn {
+    -fx-padding: 12 40;
+    -fx-font-size: 16px;
+    -fx-min-width: 160;
+    -fx-font-family: 'Courier New', Courier, monospace;
+}
+
+.sb-login-subtitle {
+    -fx-font-size: 18px;
+    -fx-padding: 8 0 16 0;
+    -fx-font-family: 'Courier New', Courier, monospace;
+}
+
+.sb-create-form {
+    -fx-vgap: 12;
+    -fx-hgap: 24;
+}
+
+.sb-create-form Label {
+    -fx-font-size: 16px;
+    -fx-padding: 0 0 8 0;
+    -fx-font-family: 'Courier New', Courier, monospace;
+    -fx-font-weight: 600;
+}
+
+.sb-create-form .sb-input {
+    -fx-padding: 14 16;
+    -fx-font-size: 16px;
+    -fx-font-family: 'Courier New', Courier, monospace;
+}
+
+.sb-create-form .sb-login-btn {
+    -fx-padding: 16 48;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Courier New', Courier, monospace;
+    -fx-translate-y: 20;
+}
+
+.sb-form-submit {
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 0;
+}
+
+.sb-tab-active {
+    -fx-background-color: #ffb800;
+    -fx-text-fill: #222;
+}
+
+.sb-tab-active:hover {
+    -fx-background-color: #e6a500;
+}
+
+.sb-login-btn {
+    -fx-background-color: #ffb800;
+    -fx-text-fill: #222;
+}
+
+.sb-login-btn:hover {
+    -fx-background-color: #e6a500;
+}
+
+.sb-login-image {
+    -fx-border-width: 0 2 0 0;
+}
+
+.sb-back-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #444;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.sb-back-btn:hover {
+    -fx-text-fill: #000;
+}
