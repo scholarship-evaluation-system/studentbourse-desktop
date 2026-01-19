@@ -4,22 +4,20 @@ import com.studentbourse.util.DB;
 import com.studentbourse.model.Application;
 
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ApplicationDAO {
 
     public static void apply(int userId, int scholarshipId) {
         try (Connection c = DB.getConnection()) {
-
             PreparedStatement ps = c.prepareStatement(
-                    "insert into application(user_id, scholarship_id, status, total_score) " +
-                            "values (?,?,?,0)");
-
+                    "insert into application(user_id, scholarship_id, status, total_score) values (?,?,?,0)"
+            );
             ps.setInt(1, userId);
             ps.setInt(2, scholarshipId);
             ps.setString(3, "submitted");
             ps.executeUpdate();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -29,10 +27,9 @@ public class ApplicationDAO {
         List<Application> list = new ArrayList<>();
 
         try (Connection c = DB.getConnection()) {
-
             PreparedStatement ps = c.prepareStatement(
-                    "select * from application where user_id=?");
-
+                    "select * from application where user_id=?"
+            );
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
 
@@ -45,10 +42,73 @@ public class ApplicationDAO {
                 a.totalScore = rs.getFloat("total_score");
                 list.add(a);
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        return list;
+    }
+
+    public static List<Application> findByScholarship(int scholarshipId) {
+        List<Application> list = new ArrayList<>();
+
+        try (Connection c = DB.getConnection()) {
+            PreparedStatement ps = c.prepareStatement(
+                    "select * from application where scholarship_id=? order by total_score desc"
+            );
+            ps.setInt(1, scholarshipId);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Application a = new Application();
+                a.id = rs.getInt("id");
+                a.userId = rs.getInt("user_id");
+                a.scholarshipId = rs.getInt("scholarship_id");
+                a.status = rs.getString("status");
+                a.totalScore = rs.getFloat("total_score");
+                list.add(a);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
+    public static void updateStatus(int applicationId, String status) {
+        try (Connection c = DB.getConnection()) {
+            PreparedStatement ps = c.prepareStatement(
+                    "update application set status=? where id=?"
+            );
+            ps.setString(1, status);
+            ps.setInt(2, applicationId);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static List<Application> findAll() {
+        List<Application> list = new ArrayList<>();
+
+        try (Connection c = DB.getConnection()) {
+            PreparedStatement ps = c.prepareStatement(
+                    "select * from application order by created_at desc"
+            );
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Application a = new Application();
+                a.id = rs.getInt("id");
+                a.userId = rs.getInt("user_id");
+                a.scholarshipId = rs.getInt("scholarship_id");
+                a.status = rs.getString("status");
+                a.totalScore = rs.getFloat("total_score");
+                list.add(a);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return list;
     }
 }

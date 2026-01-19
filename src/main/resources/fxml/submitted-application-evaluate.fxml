@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.studentbourse.controller.SubmittedApplicationEvaluateController"
+      spacing="12"
+      style="-fx-padding:20"
+      stylesheets="@../css/submitted-application-evaluate.css">
+
+    <Label text="Evaluate Application" style="-fx-font-size:18"/>
+
+    <Button text="Auto Evaluate" onAction="#onAutoEvaluate"/>
+
+    <Separator/>
+
+    <Label text="Manual Evaluation"/>
+
+    <TextField fx:id="academicField" promptText="Academic (0–100)"/>
+    <TextField fx:id="financialField" promptText="Financial (0–100)"/>
+    <TextField fx:id="examField" promptText="Exam (0–100)"/>
+    <TextField fx:id="extracurricularField" promptText="Extracurricular (0–100)"/>
+
+    <TextArea fx:id="commentsField" promptText="Comments"/>
+
+    <Button text="Submit Manual Evaluation" onAction="#onManualEvaluate"/>
+
+</VBox>

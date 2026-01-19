@@ -10,6 +10,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import java.util.List;
+import com.studentbourse.model.Application;
+import com.studentbourse.dao.ApplicationDAO;
 
 public class EvaluatorApplicationsController {
 
@@ -19,6 +22,7 @@ public class EvaluatorApplicationsController {
     @FXML private GridPane applicationsGrid;
     @FXML private Button applicationsBtn;
     @FXML private Button reviewsBtn;
+
 
     @FXML
     public void initialize() {
@@ -51,8 +55,14 @@ public class EvaluatorApplicationsController {
         int row = 0;
         int maxCols = 2;
 
-        for (int i = 1; i <= 8; i++) {
-            HBox card = createApplicationCard("Application #" + i);
+        List<Application> applications = ApplicationDAO.findAll();
+
+        for (Application app : applications) {
+            HBox card = createApplicationCard(
+                    "Application #" + app.id + " | Score: " + app.totalScore,
+                    app.id
+            );
+
             applicationsGrid.add(card, col, row);
 
             col++;
@@ -63,7 +73,7 @@ public class EvaluatorApplicationsController {
         }
     }
 
-    private HBox createApplicationCard(String title) {
+    private HBox createApplicationCard(String title, int applicationId) {
         HBox card = new HBox();
         card.getStyleClass().add("sb-application-card");
         card.setAlignment(Pos.CENTER_LEFT);
@@ -80,9 +90,13 @@ public class EvaluatorApplicationsController {
 
         card.getChildren().addAll(label, spacer, arrow);
 
-        card.setOnMouseClicked(e ->
-                System.out.println("Clicked on: " + title)
-        );
+        card.setOnMouseClicked(e -> {
+            SubmittedApplicationEvaluateController.setApplicationId(applicationId);
+            MainApp.show(
+                    "submitted-application-evaluate.fxml",
+                    "Evaluate Application"
+            );
+        });
 
         return card;
     }

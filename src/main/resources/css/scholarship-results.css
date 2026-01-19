@@ -1,0 +1,11 @@
+.root {
+    -fx-background-color: #f8f9fb;
+}
+
+.table-view {
+    -fx-border-color: #ddd;
+}
+
+.button {
+    -fx-padding: 8 14;
+}

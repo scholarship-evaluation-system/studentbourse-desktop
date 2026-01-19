@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.studentbourse.controller.SubmittedApplicationsController"
+            stylesheets="@../css/submitted-applications.css">
+
+    <top>
+        <Label text="Submitted Applications"
+               style="-fx-font-size: 18px; -fx-padding: 12;"/>
+    </top>
+
+    <center>
+        <TableView fx:id="applicationsTable">
+            <columns>
+                <TableColumn fx:id="scholarshipCol" text="Scholarship"/>
+                <TableColumn fx:id="statusCol" text="Status"/>
+                <TableColumn fx:id="scoreCol" text="Total Score"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>

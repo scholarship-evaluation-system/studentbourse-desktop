@@ -1,12 +1,17 @@
 package com.studentbourse.controller;
 
+import com.studentbourse.MainApp;
+import com.studentbourse.dao.ApplicationDAO;
+import com.studentbourse.model.Application;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import com.studentbourse.MainApp;
+
+import java.util.List;
 
 public class EvaluatorDashboardController {
 
@@ -36,12 +41,17 @@ public class EvaluatorDashboardController {
             semesterDropdown.getSelectionModel().selectFirst();
         }
 
-        System.out.println("EvaluatorDashboardController initialized");
+        loadChart();
     }
 
     @FXML
     private void onApplicationsClick() {
-        System.out.println("Applications clicked");
+        MainApp.show("evaluator-applications.fxml", "Evaluator Applications");
+    }
+
+    @FXML
+    private void onReviewsClick() {
+        MainApp.show("evaluator-reviews.fxml", "Evaluator Reviews");
     }
 
     @FXML
@@ -54,13 +64,28 @@ public class EvaluatorDashboardController {
         MainApp.show("evaluator-notifications.fxml", "Notifications");
     }
 
-    @FXML
-    public void onHomeClick(MouseEvent event) {
-        MainApp.show("role-selection.fxml", "StudentBourse");
+    private void loadChart() {
+        List<Application> apps = ApplicationDAO.findAll();
+
+        long submitted = apps.stream().filter(a -> "submitted".equals(a.status)).count();
+        long inProcess = apps.stream().filter(a -> "in_process".equals(a.status)).count();
+        long picked = apps.stream().filter(a -> "picked".equals(a.status)).count();
+        long rejected = apps.stream().filter(a -> "rejected".equals(a.status)).count();
+
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        series.setName("Applications");
+
+        series.getData().add(new XYChart.Data<>("Submitted", submitted));
+        series.getData().add(new XYChart.Data<>("In Process", inProcess));
+        series.getData().add(new XYChart.Data<>("Picked", picked));
+        series.getData().add(new XYChart.Data<>("Rejected", rejected));
+
+        barChart.getData().clear();
+        barChart.getData().add(series);
     }
 
     @FXML
-    private void onReviewsClick() {
-        System.out.println("Reviews clicked");
+    public void onHomeClick(MouseEvent event) {
+        MainApp.show("role-selection.fxml", "StudentBourse");
     }
 }

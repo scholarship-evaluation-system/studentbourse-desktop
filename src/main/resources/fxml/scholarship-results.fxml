@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.studentbourse.controller.ScholarshipResultsController"
+      spacing="14"
+      style="-fx-padding:20"
+      stylesheets="@../css/scholarship-results.css">
+
+    <Label text="Scholarship Results" style="-fx-font-size:18"/>
+
+    <TableView fx:id="resultsTable">
+        <columns>
+            <TableColumn fx:id="applicationCol" text="Application ID"/>
+            <TableColumn fx:id="scoreCol" text="Score"/>
+            <TableColumn fx:id="statusCol" text="Status"/>
+        </columns>
+    </TableView>
+
+    <Button text="Finalize Ranking" onAction="#onFinalize"/>
+</VBox>
