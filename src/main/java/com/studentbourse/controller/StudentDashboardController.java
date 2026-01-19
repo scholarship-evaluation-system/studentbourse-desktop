@@ -1,19 +1,26 @@
 package com.studentbourse.controller;
 
 import com.studentbourse.MainApp;
+import com.studentbourse.model.Application;
+import com.studentbourse.service.ApplicationService;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
+
+import java.util.List;
 
 public class StudentDashboardController {
 
-    @FXML private HBox matchesMenuItem;
-    @FXML private HBox pickedMenuItem;
-    @FXML private HBox inProcessMenuItem;
-    @FXML private HBox submittedMenuItem;
-
     @FXML private ComboBox<String> semesterDropdown;
+
+    @FXML private Label submittedCount;
+    @FXML private Label inProcessCount;
+    @FXML private Label pickedCount;
+
+    private final ApplicationService applicationService = new ApplicationService();
+
+    private final int CURRENT_USER_ID = 1;
 
     @FXML
     public void initialize() {
@@ -24,34 +31,48 @@ public class StudentDashboardController {
         );
         semesterDropdown.setValue("2025 Fall");
 
-        semesterDropdown.setOnAction(e -> {
-            String selected = semesterDropdown.getValue();
-            System.out.println("Semester changed to: " + selected);
-        });
+        loadStats();
+    }
+
+    private void loadStats() {
+        List<Application> apps =
+                applicationService.getApplicationsForStudent(CURRENT_USER_ID);
+
+        long submitted =
+                apps.stream().filter(a -> "submitted".equals(a.status)).count();
+        long inProcess =
+                apps.stream().filter(a -> "in_process".equals(a.status)).count();
+        long picked =
+                apps.stream().filter(a -> "picked".equals(a.status)).count();
+
+        if (submittedCount != null) submittedCount.setText(String.valueOf(submitted));
+        if (inProcessCount != null) inProcessCount.setText(String.valueOf(inProcess));
+        if (pickedCount != null) pickedCount.setText(String.valueOf(picked));
     }
 
     @FXML
     public void onMatchesClick(MouseEvent event) {
-        System.out.println("Matches clicked");
         MainApp.show("scholarship-list.fxml", "Scholarship Matches");
     }
 
     @FXML
     public void onPickedClick(MouseEvent event) {
-        System.out.println("Picked clicked");
         MainApp.show("picked-applications.fxml", "Picked Applications");
     }
 
     @FXML
     public void onInProcessClick(MouseEvent event) {
-        System.out.println("In Process clicked");
         MainApp.show("in-process.fxml", "In Process Applications");
     }
 
     @FXML
     public void onSubmittedClick(MouseEvent event) {
-        System.out.println("Submitted clicked");
-        MainApp.show("student-applications.fxml", "Submitted Applications");
+        MainApp.show("submitted-applications.fxml", "Submitted Applications");
+    }
+
+    @FXML
+    public void onFinalResultsClick(MouseEvent event) {
+        MainApp.show("student-final-results.fxml", "Final Results");
     }
 
     @FXML
